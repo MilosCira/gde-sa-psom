@@ -1,0 +1,134 @@
+.close-button {
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+    height: 52px;
+    padding: 1rem;
+    font-size: 3rem;
+
+    content: url("/assets/modals/close-light.svg");
+    &:hover {
+        cursor: pointer;
+    }
+}
+// fix problem with modal scroll bar showing and hiding
+.modal-open {
+    overflow-y: scroll;
+    /* Modal */
+}
+
+.twog-modal {
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    bottom: 50%;
+    left: 20%;
+    .modal-dialog {
+        max-width: 100%;
+    }
+
+    .modal-content {
+        padding: 4rem 3rem;
+        border: none;
+        position: relative;
+        width: auto;
+        max-width: 50rem;
+        min-width: 25rem;
+        margin: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 12px 0 rgba(51, 51, 51, 0.56);
+        background-color: white;
+        // background-image: url('/assets/modals/background-light.png');
+        // background-size: cover;
+        // background-position: bottom;
+        // background-repeat: no-repeat;
+    }
+
+    .modal-header {
+        padding: 0;
+        padding-top: 1rem;
+        border-bottom: none;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            width: 100%;
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 3rem;
+            margin: 0;
+            display: block;
+            color: #3c3c3c;
+
+            span {
+                color: #3c3c3c;
+                font-size: 1.4rem;
+                font-weight: 200;
+            }
+        }
+    }
+
+    .modal-body {
+        text-align: center;
+        border-bottom: none;
+        padding: 0;
+        color: white;
+
+        form {
+            .input-wrapper {
+                position: relative;
+
+                .error,
+                .warning {
+                    // position: absolute;
+                    text-align: left;
+                    margin-bottom: 1rem;
+                    font-size: 1.3rem;
+                    font-style: italic;
+                    color: red;
+                    p {
+                        margin: 0;
+                        font-weight: bold;
+                    }
+                }
+
+                .error {
+                    bottom: 0;
+                }
+
+                .warning {
+                    bottom: 0.5rem;
+                }
+            }
+        }
+
+        // select,
+        // input[type='text'],
+        // input[type='email'],
+        // input[type='password'] {
+        //   width: 100%;
+        //   height: 2.5rem;
+        //   margin-bottom: 1.5rem;
+        //   font-size: 1rem;
+        //   line-height: 3.8rem;
+        //   text-indent: 1rem;
+        //   border: none;
+        // }
+        mat-form-field {
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+            margin-bottom: 2.5rem;
+            font-size: 1.8rem;
+            line-height: 3.8rem;
+            text-indent: 1rem;
+            //border-radius: 0.5rem;
+            border: none;
+        }
+    }
+}

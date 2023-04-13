@@ -1,0 +1,32 @@
+.friends-site-container {
+    background-color: #000;
+    margin-top: 3rem;
+    padding: 20px 0;
+    .friends-text {
+        color: #fbfbfb;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+    .friends-site-wrapper {
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(4, 100px);
+        justify-content: space-around;
+        margin-top: 1rem;
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .friend-image {
+            width: 130px;
+            height: 90px;
+            background-size: cover;
+        }
+    }
+}
+@media screen and (max-width: 680px) {
+    .friends-site-wrapper {
+        grid-template-columns: repeat(2, 100px) !important;
+        gap: 2rem;
+    }
+}

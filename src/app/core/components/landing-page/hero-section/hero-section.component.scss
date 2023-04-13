@@ -1,0 +1,58 @@
+@import "../../../../../assets/scss/default_variable";
+
+.hero-section-container {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    .hero-section-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 1rem;
+        .hero-image {
+            width: 500px;
+        }
+        .hero-text {
+            color: $text-color-white;
+            font-weight: $font-bold;
+            font-size: 20px;
+            // width: 350px;
+            display: flex;
+            flex-direction: column;
+            .hero-title {
+                font-size: 20px;
+                width: 370px;
+                // white-space: nowrap;
+            }
+            .hero-description {
+                font-size: 18px;
+                font-weight: 400;
+                margin-top: 1rem;
+                width: 370px;
+            }
+            .fs-28 {
+                font-size: 28px;
+            }
+            .mt-16 {
+                margin-top: 1rem;
+            }
+            .pr-button {
+                margin-top: 1rem;
+                border-radius: 8px;
+                background-color: transparent;
+                border: 1px solid #5cb25d;
+                color: $text-color-white;
+                padding: 10px 20px;
+                cursor: pointer;
+                font-weight: 600;
+            }
+        }
+    }
+}
+@media screen and (max-width: 810px) {
+    .hero-section-wrapper {
+        flex-direction: column-reverse;
+    }
+    .hero-image {
+        width: 400px !important;
+    }
+}

@@ -1,0 +1,22 @@
+<div class="hero-section-container">
+  <div class="hero-section-wrapper">
+    <p class="hero-text">
+      <span class="hero-title fs-28">{{ "gde sa psom" | transloco }}?</span>
+      <span class="hero-title mt-16"
+        >{{
+          "zelimo kratko da Vas upoznamo sa sajtom gde sa psom" | transloco
+        }}!</span
+      >
+      <span class="hero-description">{{ "upoznavanje" | transloco }}</span>
+      <button (click)="openModal()" class="pr-button">{{ "pogledaj" | transloco }}</button>
+    </p>
+    <img
+      class="hero-image"
+      src="../../../../../assets/dogs-w.png"
+      alt="hero-image"
+    />
+  </div>
+</div>
+<ng-template addCaffe>
+<app-add-caffe-modal ></app-add-caffe-modal>
+</ng-template>

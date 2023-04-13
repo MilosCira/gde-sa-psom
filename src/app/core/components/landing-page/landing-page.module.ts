@@ -6,6 +6,8 @@ import { FriendsOfSiteComponent } from './friends-of-site/friends-of-site.compon
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslocoRootModule } from '../../transloco/transloco.module';
 import { NgbDropdown, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeroSectionComponent } from './hero-section/hero-section.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -14,12 +16,14 @@ import { NgbDropdown, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
         NavbarComponent,
         FooterComponent,
         FriendsOfSiteComponent,
+        HeroSectionComponent,
 
     ],
     imports: [
         BrowserModule,
         TranslocoRootModule,
-        NgbDropdownModule
+        NgbDropdownModule,
+        SharedModule
     ],
     exports: [NgbDropdownModule],
     providers: [],
