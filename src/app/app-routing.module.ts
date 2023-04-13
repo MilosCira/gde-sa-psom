@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: LandingPageComponent,
-    data: { titile: 'Welcome screen' },
+    data: { title: 'Welcome screen' },
   },
   {
     path: '**',
@@ -19,4 +19,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

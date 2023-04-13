@@ -1,13 +1,15 @@
-<header>
-  <div class="nav">
-     <div class="nav-wrapepr">
-      <img src="../../../../assets/LogoK.png" alt="">
-      <div class="nav-links">
-      <a href="">Početna</a>
-      <a href="">Ugositeljski objekti</a>
-      <a href="">O nama</a>
-      <a href="">Predloži kafić</a>
-    </div>
-     </div>
-  </div>
-</header>
+   <div class="landing-page-container">
+      <div ngbDropdown class="d-inline-block drop-language">
+        <button type="button" class="btn " id="dropdownBasic1" ngbDropdownToggle>
+          <span class="name-language">{{this.activeLang?.id}}</span>
+          <img class="flag-img"  [src]="this.activeLang?.label" alt=""> 
+        </button>
+        <div  ngbDropdownMenu aria-labelledby="dropdownBasic1" class="open-dropdown">
+          <button  *ngFor="let lang of languages" (click)="selectLang(lang)"  ngbDropdownItem><span class="name-language">{{ lang?.id }}</span>
+            <img class="flag-img" (click)="selectLang(lang)" [src]="lang.label" alt=""> </button>
+        
+        </div>
+      </div>
+   
+ <app-navbar></app-navbar>
+</div> 
