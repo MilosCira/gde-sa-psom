@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageBase64Service } from '../../interceptor/utils/base64.converter';
+import { CateringService } from './caterign-facilities.service';
 
 @Component({
   selector: 'app-catering-facilities',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CateringFacilitiesComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private cs: CateringService, public imgServ: ImageBase64Service) { }
+  allCateringFacilties: any;
   ngOnInit(): void {
+    this.getAllCateringF();
   }
+  getAllCateringF() {
+    this.cs.getAllCateringFacilties().subscribe((res) => {
+      console.log(res);
+      this.allCateringFacilties = res;
 
+    })
+
+  }
 }

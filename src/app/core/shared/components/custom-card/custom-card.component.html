@@ -1,0 +1,57 @@
+<div class="cards-container">
+  <ngb-carousel [interval]="10000" #carousel (slide)="onSlide($event)">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img
+          [src]="images ? images : '../../../../../assets/comming.jpg'"
+          alt="My image outside"
+        />
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img
+          [src]="
+            imagesInside ? imagesInside : '../../../../../assets/comming.jpg'
+          "
+          alt="My image inside"
+        />
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  <div class="content-card">
+    <div class="name-object">{{ nameOfObject }}</div>
+    <div class="icon-text-wrapper">
+      <i class="material-icons nav__icon">location_on</i>
+      <span class="value"
+        ><a
+          [href]="'http://maps.google.com/?q=' + location + ' ' + city"
+          target="_blank"
+          >{{ location }}</a
+        ></span
+      >
+    </div>
+    <div class="icon-text-wrapper">
+      <i class="material-icons nav__icon">location_city</i>
+      <span class="value">{{ township }}, {{ city }}</span>
+    </div>
+    <div class="icon-text-wrapper">
+      <i class="material-icons nav__icon">deck</i>
+      <span class="value">{{ garden }}</span>
+    </div>
+
+    <div class="icon-text-wrapper">
+      <i class="material-icons nav__icon">pets</i>
+      <span class="value">{{ sizeOfDog }}</span>
+    </div>
+
+    <div class="icon-text-wrapper">
+      <i class="material-icons nav__icon">link</i>
+      <span class="value">
+        <a [href]="siteLink" target="_blank">{{
+          "link ka sajtu" | transloco
+        }}</a></span
+      >
+    </div>
+  </div>
+</div>

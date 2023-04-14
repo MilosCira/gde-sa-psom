@@ -14,7 +14,6 @@ export class HeroSectionComponent implements OnInit {
   }
 
   openModal() {
-    console.log('aaa');
 
     this.addCaffeService.open();
   }

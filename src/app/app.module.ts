@@ -10,13 +10,15 @@ import { LandingPageModule } from './core/components/landing-page/landing-page.m
 import { NotFoundedComponent } from './core/components/not-founded/not-founded.component';
 import { TranslocoRootModule } from './core/transloco/transloco.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ApiPrefixInterceptor } from './core/interceptor/api.interceptor';
+import { SharedModule } from './core/shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutPageComponent,
     CateringFacilitiesComponent,
-    NotFoundedComponent
+    NotFoundedComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,10 +26,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LandingPageModule,
     TranslocoRootModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    LandingPageModule,
+    SharedModule
+  ],
+  exports: [SharedModule],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiPrefixInterceptor,
+      multi: true,
+    },
   ],
 
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

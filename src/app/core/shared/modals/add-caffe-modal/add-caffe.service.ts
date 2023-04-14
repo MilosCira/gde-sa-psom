@@ -19,7 +19,6 @@ export class AddCaffeModalService {
 
         this.state.modal = this.modalService.open(this.state.template, {
             windowClass: 'twog-modal',
-            backdropClass: 'light-blue-backdrop',
             centered: true,
         });
 

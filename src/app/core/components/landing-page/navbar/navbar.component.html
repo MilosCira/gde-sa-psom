@@ -1,26 +1,67 @@
-<header>
-    <div class="nav-wrapper">
-        <div class="logo-container">
-            <img class="logo" src="../../../../assets/logo.png" alt="Logo">
-        </div>
-        <nav>
-            <input class="hidden" type="checkbox" id="menuToggle">
-            <label class="menu-btn" for="menuToggle">
-                <div class="menu"></div>
-                <div class="menu"></div>
-                <div class="menu"></div>
-            </label>
-            <div class="nav-container">
-                <ul class="nav-tabs-gp">
-                    
-                    <a href="/"><li class="nav-tab-gp">{{'pocetna' | transloco}}</li></a>
-                    <a href=""><li class="nav-tab-gp">{{'ugostiteljski objekti'|transloco}}</li></a>
-                    <a href="">  <li class="nav-tab-gp">{{'o nama'|transloco}}</li></a>
-                    <!-- <li class="nav-tab">Česta pitanja</li> -->
-                    <a href="">  <li class="nav-tab-gp">{{'predlozi objekat'|transloco}}</li></a>
-                </ul>
-            </div>
-        </nav>
-     
+<div class="nav-wrapper">
+  <div class="logo-container">
+    <img class="logo" src="../../../../assets/logo.png" alt="Logo" />
+  </div>
+  <nav>
+    <div class="nav-container">
+      <ul class="nav-tabs-gp">
+        <a href="/"
+          ><li class="nav-tab-gp">{{ "pocetna" | transloco }}</li></a
+        >
+        <a href="all-facilites"
+          ><li class="nav-tab-gp">
+            {{ "ugostiteljski objekti" | transloco }}
+          </li></a
+        >
+        <a href="about">
+          <li class="nav-tab-gp">{{ "o nama" | transloco }}</li></a
+        >
+        <!-- <li class="nav-tab">Česta pitanja</li> -->
+        <li class="nav-tab-gp" (click)="openModal()">
+          {{ "predlozi objekat" | transloco }}
+        </li>
+      </ul>
     </div>
-</header>
+  </nav>
+</div>
+<div class="mobile-menu">
+  <nav class="nav">
+    <a
+      [routerLink]="'/'"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="nav__link--active"
+      class="nav__link"
+    >
+      <i class="material-icons nav__icon">home</i>
+      <span class="nav__text">{{ "pocetna" | transloco }}</span>
+    </a>
+    <a
+      [routerLink]="'/all-facilites'"
+      [routerLinkActive]="['nav__link--active']"
+      class="nav__link"
+    >
+      <i class="material-icons nav__icon">search</i>
+      <span class="nav__text">{{ "ugostiteljski objekti" | transloco }}</span>
+    </a>
+    <a
+      [routerLink]="'/about'"
+      [routerLinkActive]="['nav__link--active']"
+      class="nav__link"
+    >
+      <i class="material-icons nav__icon">info</i>
+      <span class="nav__text">{{ "o nama" | transloco }}</span>
+    </a>
+
+    <a
+      (click)="openModal()"
+      [routerLinkActive]="['nav__link--active']"
+      class="nav__link"
+    >
+      <i class="material-icons nav__icon">add</i>
+      <span class="nav__text">{{ "predlozi objekat" | transloco }}</span>
+    </a>
+  </nav>
+</div>
+<ng-template addCaffe>
+  <app-add-caffe-modal></app-add-caffe-modal>
+</ng-template>

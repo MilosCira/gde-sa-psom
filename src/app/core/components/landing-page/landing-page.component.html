@@ -1,17 +1,8 @@
-   <div class="landing-page-container">
-      <div ngbDropdown class="d-inline-block drop-language">
-        <button type="button" class="btn " id="dropdownBasic1" ngbDropdownToggle>
-          <span class="name-language">{{this.activeLang?.id}}</span>
-          <img class="flag-img"  [src]="this.activeLang?.label" alt=""> 
-        </button>
-        <div  ngbDropdownMenu aria-labelledby="dropdownBasic1" class="open-dropdown">
-          <button  *ngFor="let lang of languages" (click)="selectLang(lang)"  ngbDropdownItem><span class="name-language">{{ lang?.id }}</span>
-            <img class="flag-img" (click)="selectLang(lang)" [src]="lang.label" alt=""> </button>
-        
-        </div>
-      </div>
-   
- <app-navbar></app-navbar>
- <app-hero-section></app-hero-section>
- <app-friends-of-site></app-friends-of-site>
-</div> 
+<div class="landing-page-container">
+ 
+
+
+  <app-hero-section></app-hero-section>
+  <app-friends-of-site></app-friends-of-site>
+  <app-suggested-catering-facilities></app-suggested-catering-facilities>
+</div>

@@ -21,9 +21,10 @@
 
 .twog-modal {
     font-family: "Montserrat", sans-serif;
-    position: absolute;
-    bottom: 50%;
-    left: 20%;
+    position: relative;
+    bottom: 800px;
+    margin: 0 auto;
+
     .modal-dialog {
         max-width: 100%;
     }

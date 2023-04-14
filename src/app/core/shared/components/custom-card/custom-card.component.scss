@@ -1,0 +1,39 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+.cards-container {
+    background-color: #3c3c3c;
+    border-radius: 8px;
+    width: 300px;
+    min-height: 500px;
+    .picsum-img-wrapper {
+        img {
+            height: 200px;
+            width: 300px;
+            border-radius: 8px 8px 0 0;
+        }
+    }
+    .content-card {
+        padding: 15px;
+        gap: 0.5rem;
+        display: grid;
+        .value {
+            color: #fbfbfb;
+            margin-left: 8px;
+            a {
+                color: #fbfbfb;
+                text-decoration: underline;
+            }
+        }
+        .name-object {
+            color: #fbfbfb;
+            font-size: 20px;
+            margin-left: 6px;
+        }
+        .icon-text-wrapper {
+            display: flex;
+            align-items: center;
+            i {
+                color: #fbfbfb;
+            }
+        }
+    }
+}

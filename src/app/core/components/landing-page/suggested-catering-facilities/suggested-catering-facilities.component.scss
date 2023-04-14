@@ -1,8 +1,9 @@
-.catering-container {
+.suggested-container {
     display: grid;
-    gap: 1rem;
+    margin-top: 2rem;
     grid-template-columns: repeat(4, 300px);
-    padding-top: 1rem;
+    grid-gap: 1rem;
+    margin-bottom: 2rem;
     justify-content: center;
     @media screen and (max-width: 1300px) {
         grid-template-columns: repeat(3, 300px) !important;
@@ -14,12 +15,9 @@
         grid-template-columns: repeat(1, 300px) !important;
     }
 }
-.header-text {
+.text-header {
+    margin-top: 1rem;
     color: #fbfbfb;
     font-size: 24px;
-    padding-top: 8rem;
-}
-.catering-wrapper {
-    display: grid;
-    justify-content: center;
+    text-align: center;
 }

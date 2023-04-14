@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AddCaffeModalService } from 'src/app/core/shared/modals/add-caffe-modal/add-caffe.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private addCaffeService: AddCaffeModalService,) { }
 
   ngOnInit(): void {
   }
+  openModal() {
 
+    this.addCaffeService.open();
+  }
 }

@@ -1,7 +1,6 @@
-<div class="catering-wrapper">
-    <p class="header-text">{{'broj kafica'|transloco}}: {{allCateringFacilties?.count?.broj}} </p>
-<div class="catering-container">
-    <app-custom-card *ngFor="let data of allCateringFacilties?.objekat2"
+<div class="text-header">{{'nasa ponuda'|transloco}}</div>
+<div class="suggested-container">
+<app-custom-card *ngFor="let data of randomCateringFacilties?.random"
 [siteLink]="data?.iuo_link_web"
 [images]="data?.iuo_slika?imgServ.sanitizer(data?.iuo_slika):null"
 [sizeOfDog]="data?.sta_ime"
@@ -15,5 +14,6 @@
 >
 
 </app-custom-card>
-</div>
+
+
 </div>

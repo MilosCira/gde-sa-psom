@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutPageComponent } from './core/components/about-page/about-page.component';
+import { CateringFacilitiesComponent } from './core/components/catering-facilities/catering-facilities.component';
 import { LandingPageComponent } from './core/components/landing-page/landing-page.component';
 import { NotFoundedComponent } from './core/components/not-founded/not-founded.component';
 
@@ -8,6 +10,14 @@ const routes: Routes = [
     path: '',
     component: LandingPageComponent,
     data: { title: 'Welcome screen' },
+  },
+  {
+    path: 'all-facilites',
+    component: CateringFacilitiesComponent,
+  },
+  {
+    path: 'about',
+    component: AboutPageComponent,
   },
   {
     path: '**',
