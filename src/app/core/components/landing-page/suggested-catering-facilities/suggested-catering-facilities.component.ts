@@ -11,16 +11,13 @@ export class SuggestedCateringFacilitiesComponent implements OnInit {
 
   constructor(private cService: CateringService, public imgServ: ImageBase64Service) { }
   public randomCateringFacilties: any;
-  public images: any;
   ngOnInit(): void {
     this.getRandomCF()
   }
   getRandomCF() {
 
     this.cService.getRandomCateringFacilties().subscribe((res) => {
-      console.log(res);
-      this.images = this.imgServ.sanitizer(res?.iuo_slika)
-      console.log(this.images);
+
 
       this.randomCateringFacilties = res;
 
