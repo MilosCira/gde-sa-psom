@@ -12,6 +12,7 @@ import { TranslocoRootModule } from './core/transloco/transloco.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ApiPrefixInterceptor } from './core/interceptor/api.interceptor';
 import { SharedModule } from './core/shared/shared.module';
+import { PipeModule } from './core/pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { SharedModule } from './core/shared/shared.module';
     HttpClientModule,
     NgbModule,
     LandingPageModule,
-    SharedModule
+    SharedModule,
+    PipeModule
   ],
-  exports: [SharedModule],
+  exports: [SharedModule, PipeModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

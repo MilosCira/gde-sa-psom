@@ -1,7 +1,9 @@
 <div class="catering-wrapper">
-    <p class="header-text">{{'broj kafica'|transloco}}: {{allCateringFacilties?.length}} </p>
+    <input [placeholder]="'pretrazi'|transloco" [(ngModel)]="searchWord" (keypress)="searchCateringFacilities(searchWord)" type="text"  class="search-input">
+    <p class="header-text">{{'broj kafica'|transloco}}: {{countNumber}} </p>
+    <p>{{allCateringFacilties?.length}}</p>
 <div class="catering-container">
-    <app-custom-card *ngFor="let data of allCateringFacilties"
+    <app-custom-card *ngFor="let data of allCateringFacilties "
 [siteLink]="data?.iuo_link_web"
 [images]="data?.slikaKafica?data?.slikaKafica:null"
 [sizeOfDog]="data?.sta_ime"
@@ -16,4 +18,5 @@
 
 </app-custom-card>
 </div>
+<button class="show-more" (click)="showMore()">{{'prikazi vise'|transloco}}</button>
 </div>

@@ -11,7 +11,7 @@ import { CateringState, CateringStore } from './catering.store';
 })
 export class CateringResolver implements Resolve<any[]> {
     pageIndex: number = 1;
-    pageSize: number = 25;
+    pageSize: number = 15;
     constructor(
         private cateringService: CateringService,
         private cateringStore: CateringStore,
@@ -21,13 +21,12 @@ export class CateringResolver implements Resolve<any[]> {
 
 
 
-        return this.cateringService.getAllCateringFacilties().pipe(
+        return this.cateringService.getLimitCatering(this.pageSize).pipe(
             catchError((error) => {
                 this.router.navigate(['/']);
                 return of('No catering data for...');
             }),
             tap((cs: any) => {
-                console.log(cs);
 
                 this.cateringStore.set([cs?.objekat2]);
             })

@@ -11,13 +11,14 @@ const routes: Routes = [
     path: '',
     component: LandingPageComponent,
     data: { title: 'Welcome screen' },
+
   },
   {
     path: 'all-facilites',
     component: CateringFacilitiesComponent,
-    resolve: {
-      catering: CateringResolver,
-    },
+    // resolve: {
+    //   catering: CateringResolver,
+    // },
   },
   {
     path: 'about',
