@@ -8,11 +8,8 @@
         }}!</span
       >
       <span class="hero-description">{{ "upoznavanje" | transloco }}</span>
-      <button (click)="openModal()" class="pr-button">{{ "pogledaj" | transloco }}</button>
+      <button routerLink="all-facilites"  class="pr-button">{{ "pogledaj" | transloco }}</button>
     </p>
-    <ng-template addCaffe>
-      <app-add-caffe-modal ></app-add-caffe-modal>
-      </ng-template>
     <img
       class="hero-image"
       src="../../../../../assets/dogs-w.png"

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AddCaffeModalService } from '../../../shared/modals/add-caffe-modal/add-caffe.service';
 
 @Component({
   selector: 'app-hero-section',
@@ -8,14 +7,10 @@ import { AddCaffeModalService } from '../../../shared/modals/add-caffe-modal/add
 })
 export class HeroSectionComponent implements OnInit {
 
-  constructor(private addCaffeService: AddCaffeModalService,) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  openModal() {
-
-    this.addCaffeService.open();
-  }
 
 }

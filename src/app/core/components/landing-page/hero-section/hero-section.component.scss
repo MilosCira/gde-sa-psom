@@ -39,7 +39,7 @@
                 margin-top: 1rem;
                 border-radius: 8px;
                 background-color: transparent;
-                border: 1px solid #5cb25d;
+                border: 1px solid #86868b;
                 color: $text-color-white;
                 padding: 10px 20px;
                 cursor: pointer;
@@ -54,6 +54,6 @@
         flex-direction: column-reverse;
     }
     .hero-image {
-        width: 400px !important;
+        width: 375px !important;
     }
 }

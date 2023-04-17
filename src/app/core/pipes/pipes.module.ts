@@ -1,15 +1,16 @@
 
 import { NgModule } from '@angular/core';
-import { TruncatePipe } from './limitTo.pipe';
+
+import { SearchFilterPipe } from './search.pipe';
 
 
 
 
 
 @NgModule({
-    declarations: [TruncatePipe],
+    declarations: [SearchFilterPipe],
     imports: [],
-    exports: [TruncatePipe],
+    exports: [SearchFilterPipe],
 
 })
 export class PipeModule { }

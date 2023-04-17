@@ -1,46 +1,91 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ImageBase64Service } from '../../interceptor/utils/base64.converter';
 import { CateringService } from './caterign-facilities.service';
 import { CateringQuery } from './state/catering-query';
+import { CateringStore } from './state/catering.store';
 
 @Component({
   selector: 'app-catering-facilities',
   templateUrl: './catering-facilities.component.html',
   styleUrls: ['./catering-facilities.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class CateringFacilitiesComponent implements OnInit {
-  constructor(private cs: CateringService, private cat: CateringQuery) { }
+  constructor(
+    private cs: CateringService,
+  ) { }
   allCateringFacilties: any;
   countNumber: number | undefined;
-  limitNumber = 10;
   searchWord: string = '';
+  showLoader: boolean = true;
+  places: any
+  sizeOfDogs: any;
+  towns: any;
+  selectedPlaces: any;
+  selectedSize: any;
+  selectedTowns: any;
+  dropdownSettings: any = {};
   ngOnInit(): void {
-    // this.allCateringFacilties = this.cat.getAll()[0]
-    this.count();
+    this.dropdownSettings = {
+      singleSelection: true,
+      idField: 'id',
+      textField: 'ime',
+      allowSearchFilter: true,
+    };
     this.getCateringFacilities();
   }
+  onItemSelect(item: any, type: string) {
+    switch (type) {
+      case 'place': {
+        this.selectedPlaces = item.id;
+        console.log(this.selectedPlaces);
 
-  count() {
-    this.cs.getCount().subscribe((res) => {
-      this.countNumber = res?.count?.broj;
-    });
-  }
-  searchCateringFacilities(word: string) {
-    this.cs.searchCatering(word).subscribe((res) => {
-      this.allCateringFacilties = res?.search_result;
-    });
-  }
+        break;
+      }
+      case 'towns': {
+        this.selectedTowns = item.id;
+        console.log(this.selectedTowns);
+        break;
+      }
+      case 'size': {
+        this.selectedSize = item.id;
+        console.log(this.selectedSize);
+        break;
+      }
 
+    }
+  }
+  filteredCateringFacilities() {
+    this.cs
+      .getFilteredCateringFacilties(this.selectedTowns, this.selectedPlaces, this.selectedSize)
+      .subscribe((res) => {
+
+        this.allCateringFacilties = res?.objekti;
+      });
+  }
   getCateringFacilities() {
-    this.cs.getLimitCatering(this.limitNumber).subscribe((res) => {
+    this.cs.getLimitCatering().subscribe((res) => {
+      if (res) {
+        this.showLoader = false;
+        this.cs.getAllPlaces().subscribe((res) => {
+          this.places = res?.ugo;
+        })
+
+        this.cs.getAllTown().subscribe((res) => {
+          this.towns = res?.opstina;
+        })
+
+        this.cs.getAllSizeOfDogs().subscribe((res) => {
+          this.sizeOfDogs = res?.starost
+        })
+      }
+      this.countNumber = res?.count?.broj;
       this.allCateringFacilties = res?.objekat2;
     });
   }
 
-  showMore() {
-    this.limitNumber += 10;
-    this.cs.getLimitCatering(this.limitNumber).subscribe((res) => {
-      this.allCateringFacilties = res?.objekat2;
-    });
+  /**Function retrun id */
+  public identity(index: number, item: any): number {
+    return index;
   }
 }

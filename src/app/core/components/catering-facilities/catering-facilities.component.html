@@ -1,22 +1,60 @@
-<div class="catering-wrapper">
-    <input [placeholder]="'pretrazi'|transloco" [(ngModel)]="searchWord" (keypress)="searchCateringFacilities(searchWord)" type="text"  class="search-input">
-    <p class="header-text">{{'broj kafica'|transloco}}: {{countNumber}} </p>
-    <p>{{allCateringFacilties?.length}}</p>
-<div class="catering-container">
-    <app-custom-card *ngFor="let data of allCateringFacilties "
-[siteLink]="data?.iuo_link_web"
-[images]="data?.slikaKafica?data?.slikaKafica:null"
-[sizeOfDog]="data?.sta_ime"
-[location]="data?.iuo_adressa"
-[garden]="data?.bas_naziv"
-[township]="data?.ops_ime"
-[imagesInside]="data?.slikaUnutra?data?.slikaUnutra:null"
- [nameOfObject]="data?.iuo_ime"
- [city]="data?.grd_ime"
+<div *ngIf="!showLoader" class="catering-wrapper">
+  <input
+    [placeholder]="'pretrazi' | transloco"
+    [(ngModel)]="searchWord"
+    type="text"
+    class="search-input"
+  />
+  <span class="or">{{ "or" | transloco }}</span>
+  <div class="drop-wrapper">
+    <ng-multiselect-dropdown
+      name="game"
+      [placeholder]="'Choose town' | transloco"
+      [settings]="dropdownSettings"
+      [data]="towns"
+      (onSelect)="onItemSelect($event, 'towns')"
+    >
+    </ng-multiselect-dropdown>
 
->
+    <ng-multiselect-dropdown
+      name="place"
+      [placeholder]="'Choose place' | transloco"
+      [settings]="dropdownSettings"
+      [data]="places"
+      (onSelect)="onItemSelect($event, 'place')"
+    >
+    </ng-multiselect-dropdown>
 
-</app-custom-card>
+    <ng-multiselect-dropdown
+      name="size"
+      [placeholder]="'Choose size' | transloco"
+      [settings]="dropdownSettings"
+      [data]="sizeOfDogs"
+      (onSelect)="onItemSelect($event, 'size')"
+    >
+    </ng-multiselect-dropdown>
+
+    <button class="search-button" *ngIf="selectedSize && selectedTowns && selectedPlaces" (click)="filteredCateringFacilities()"> <i class="material-icons nav__icon">search</i> {{'search'|transloco}}</button>
+  </div>
+  <p class="header-text">{{ "broj kafica" | transloco }}: {{ countNumber }}</p>
+
+  <div class="catering-container">
+    <app-custom-card
+      *ngFor="
+        let data of allCateringFacilties | searchP : searchWord;
+        trackBy: identity
+      "
+      [siteLink]="data?.iuo_link_web"
+      [images]="data?.slikaKafica ? data?.slikaKafica : null"
+      [sizeOfDog]="data?.sta_ime"
+      [location]="data?.iuo_adressa"
+      [garden]="data?.bas_naziv"
+      [township]="data?.ops_ime"
+      [imagesInside]="data?.slikaUnutra ? data?.slikaUnutra : null"
+      [nameOfObject]="data?.iuo_ime"
+      [city]="data?.grd_ime"
+    >
+    </app-custom-card>
+  </div>
 </div>
-<button class="show-more" (click)="showMore()">{{'prikazi vise'|transloco}}</button>
-</div>
+<app-loader *ngIf="showLoader"></app-loader>

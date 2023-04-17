@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
       this.transloco.setActiveLang('rs');
     }
     this.transloco.langChanges$.subscribe((lang: any) => {
-      console.log(lang);
+      // console.log(lang);
 
       if (!localStorage.getItem('lang') || lang != localStorage.getItem('lang')) {
         localStorage.setItem('lang', lang);
@@ -32,9 +32,6 @@ export class AppComponent implements OnInit {
     const active = localStorage.getItem('lang');
     this.languages = this.transloco.getAvailableLangs();
     this.activeLang = this.languages.find((item) => item.id === active);
-
-    console.log(this.activeLang);
-    console.log(active);
   }
   selectLang(lang: any) {
 

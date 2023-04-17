@@ -1,7 +1,9 @@
 .friends-site-container {
-    background-color: #000;
-    margin-top: 3rem;
     padding: 20px 0;
+    border: 1px solid #86868b;
+    border-radius: 8px;
+    width: 95%;
+    margin: 3rem auto 0;
     .friends-text {
         color: #fbfbfb;
         text-align: center;
@@ -19,8 +21,8 @@
             cursor: pointer;
         }
         .friend-image {
-            width: 130px;
-            height: 90px;
+            width: 103px;
+            height: 63px;
             background-size: cover;
         }
     }

@@ -21,7 +21,7 @@ export class CateringResolver implements Resolve<any[]> {
 
 
 
-        return this.cateringService.getLimitCatering(this.pageSize).pipe(
+        return this.cateringService.getLimitCatering().pipe(
             catchError((error) => {
                 this.router.navigate(['/']);
                 return of('No catering data for...');

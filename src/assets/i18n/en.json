@@ -10,5 +10,12 @@
     "prijatelji":"Friends of site",
     "nasa ponuda":"Recommendation of the day",
     "link ka sajtu":"Link to the site",
-    "broj kafica":"Number of available catering facilities"
+    "broj kafica":"Number of available catering facilities",
+    "pretrazi":"Search by name",
+    "loading":"loading data please wait...",
+    "Choose town":"Select city and municipality",
+    "or":"Or choose filters",
+    "Choose place":"Where you want to go?",
+    "Choose size":"Choose the size of the dog",
+    "search":"Search"
 }

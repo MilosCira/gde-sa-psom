@@ -5,6 +5,7 @@ import { CateringFacilitiesComponent } from './core/components/catering-faciliti
 import { CateringResolver } from './core/components/catering-facilities/state/catering.resolver';
 import { LandingPageComponent } from './core/components/landing-page/landing-page.component';
 import { NotFoundedComponent } from './core/components/not-founded/not-founded.component';
+import { LoginComponent } from './core/components/admin-dashboard/login/login.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
     // resolve: {
     //   catering: CateringResolver,
     // },
+  },
+  {
+    path: 'log123*in',
+    component: LoginComponent
   },
   {
     path: 'about',

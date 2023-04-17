@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslocoService } from '@ngneat/transloco';
+
 
 @Component({
   selector: 'app-landing-page',
@@ -7,12 +7,11 @@ import { TranslocoService } from '@ngneat/transloco';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
+  constructor() {
 
+  }
 
   ngOnInit(): void {
-
-
-
   }
 
 }
