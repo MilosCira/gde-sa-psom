@@ -13,6 +13,7 @@
       [settings]="dropdownSettings"
       [data]="towns"
       (onSelect)="onItemSelect($event, 'towns')"
+      (onDeSelect)="onItemDeselect($event, 'towns')"
     >
     </ng-multiselect-dropdown>
 
@@ -22,6 +23,7 @@
       [settings]="dropdownSettings"
       [data]="places"
       (onSelect)="onItemSelect($event, 'place')"
+      (onDeSelect)="onItemDeselect($event, 'place')"
     >
     </ng-multiselect-dropdown>
 
@@ -31,10 +33,17 @@
       [settings]="dropdownSettings"
       [data]="sizeOfDogs"
       (onSelect)="onItemSelect($event, 'size')"
+      (onDeSelect)="onItemDeselect($event, 'size')"
     >
     </ng-multiselect-dropdown>
 
-    <button class="search-button" *ngIf="selectedSize && selectedTowns && selectedPlaces" (click)="filteredCateringFacilities()"> <i class="material-icons nav__icon">search</i> {{'search'|transloco}}</button>
+    <button
+      class="search-button"
+      *ngIf="selectedSize && selectedTowns && selectedPlaces"
+      (click)="filteredCateringFacilities()"
+    >
+      <i class="material-icons nav__icon">search</i> {{ "search" | transloco }}
+    </button>
   </div>
   <p class="header-text">{{ "broj kafica" | transloco }}: {{ countNumber }}</p>
 

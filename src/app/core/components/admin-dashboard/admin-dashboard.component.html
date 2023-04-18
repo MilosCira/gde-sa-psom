@@ -1,1 +1,23 @@
-<p>admin-dashboard works!</p>
+<div class="admin-container">
+    <ul ngbNav #nav="ngbNav" class="nav-custom smaller">
+        <li [ngbNavItem]="1">
+            <a ngbNavLink>
+                Podesavanje ugostiteljskih objekata
+            </a>
+            <ng-template ngbNavContent>
+               <app-edit-catering-facilities></app-edit-catering-facilities>
+            </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+            <a ngbNavLink>
+               Predlozeni ugostiteljski objekti
+            </a>
+            <ng-template ngbNavContent>
+               <app-suggested-catering-facilities></app-suggested-catering-facilities>
+            </ng-template>
+        </li>
+
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
+
+</div>

@@ -6,13 +6,14 @@ import { CateringResolver } from './core/components/catering-facilities/state/ca
 import { LandingPageComponent } from './core/components/landing-page/landing-page.component';
 import { NotFoundedComponent } from './core/components/not-founded/not-founded.component';
 import { LoginComponent } from './core/components/admin-dashboard/login/login.component';
+import { AdminDashboardComponent } from './core/components/admin-dashboard/admin-dashboard.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: LandingPageComponent,
     data: { title: 'Welcome screen' },
-
   },
   {
     path: 'all-facilites',
@@ -23,7 +24,12 @@ const routes: Routes = [
   },
   {
     path: 'log123*in',
-    component: LoginComponent
+    component: LoginComponent,
+  },
+  {
+    path: 'admin',
+    component: AdminDashboardComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'about',

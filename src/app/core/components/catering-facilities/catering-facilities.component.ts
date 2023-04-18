@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { TranslocoService } from '@ngneat/transloco';
 import { ImageBase64Service } from '../../interceptor/utils/base64.converter';
 import { CateringService } from './caterign-facilities.service';
 import { CateringQuery } from './state/catering-query';
@@ -13,6 +14,8 @@ import { CateringStore } from './state/catering.store';
 export class CateringFacilitiesComponent implements OnInit {
   constructor(
     private cs: CateringService,
+    private translocoService: TranslocoService,
+    private cStore: CateringStore
   ) { }
   allCateringFacilties: any;
   countNumber: number | undefined;
@@ -34,22 +37,39 @@ export class CateringFacilitiesComponent implements OnInit {
     };
     this.getCateringFacilities();
   }
+
+  onItemDeselect(item: any, type: string) {
+    switch (type) {
+      case 'place': {
+        this.selectedPlaces = null;
+        break;
+      }
+      case 'towns': {
+        this.selectedTowns = null;
+        break;
+      }
+      case 'size': {
+        this.selectedSize = null;
+        break;
+      }
+    }
+    if (this.selectedPlaces == null || this.selectedSize == null || this.selectedTowns == null) {
+      this.getCateringFacilities()
+    }
+  }
   onItemSelect(item: any, type: string) {
     switch (type) {
       case 'place': {
         this.selectedPlaces = item.id;
-        console.log(this.selectedPlaces);
 
         break;
       }
       case 'towns': {
         this.selectedTowns = item.id;
-        console.log(this.selectedTowns);
         break;
       }
       case 'size': {
         this.selectedSize = item.id;
-        console.log(this.selectedSize);
         break;
       }
 
@@ -59,7 +79,7 @@ export class CateringFacilitiesComponent implements OnInit {
     this.cs
       .getFilteredCateringFacilties(this.selectedTowns, this.selectedPlaces, this.selectedSize)
       .subscribe((res) => {
-
+        this.countNumber = res?.count[0]?.broj;
         this.allCateringFacilties = res?.objekti;
       });
   }
@@ -68,7 +88,7 @@ export class CateringFacilitiesComponent implements OnInit {
       if (res) {
         this.showLoader = false;
         this.cs.getAllPlaces().subscribe((res) => {
-          this.places = res?.ugo;
+          this.places = this.translocoService.translate(res?.ugo);
         })
 
         this.cs.getAllTown().subscribe((res) => {
@@ -76,7 +96,8 @@ export class CateringFacilitiesComponent implements OnInit {
         })
 
         this.cs.getAllSizeOfDogs().subscribe((res) => {
-          this.sizeOfDogs = res?.starost
+
+          this.sizeOfDogs = this.translocoService.translate(res?.starost)
         })
       }
       this.countNumber = res?.count?.broj;

@@ -13,6 +13,8 @@
             {{ "ugostiteljski objekti" | transloco }}
           </li></a
         >
+
+      
         <a href="about">
           <li class="nav-tab-gp">{{ "o nama" | transloco }}</li></a
         >
@@ -20,6 +22,16 @@
         <li class="nav-tab-gp" (click)="openModal()">
           {{ "predlozi objekat" | transloco }}
         </li>
+        <a *ngIf="showLogout" href="admin"
+        ><li class="nav-tab-gp">
+           Admin
+        </li></a
+      >
+        <a *ngIf="showLogout" (click)="logout()"
+        ><li class="nav-tab-gp">
+           Logout
+        </li></a
+      >
       </ul>
     </div>
   </nav>

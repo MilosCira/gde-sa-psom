@@ -1,0 +1,22 @@
+.catering-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    gap: 2rem;
+    margin-top: 2rem;
+    .info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #fbfbfb;
+        border: 1px solid gray;
+        border-radius: 8px;
+        padding: 8px;
+        .text-info {
+            display: grid;
+        }
+        i {
+            cursor: pointer;
+            font-size: 20px;
+        }
+    }
+}

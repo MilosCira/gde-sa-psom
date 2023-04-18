@@ -1,1 +1,26 @@
-<p>edit-catering-facilities works!</p>
+<div *ngIf="caterings" class="catering-container">
+	
+
+	<div class="catering-wrapper">
+		<div *ngFor="let cate of caterings"  class="catering-item">
+		
+			<div class="info">
+				<img
+					[src]="cate?.slikaKafica ?cate?.slikaKafica : '../../../../../assets/comming.jpg' "
+					class="me-2"
+					style="width: 150px; height: 150px;"
+				/>
+                <div class="text-info">
+				<p>Ime: {{ cate?.iuo_ime }}</p>
+                <p>Adresa: {{cate?.iuo_adressa}}</p>
+                <p>Tip: {{cate?.ugo_ime}}</p>
+                <p>Starost: {{cate?.sta_ime}}</p>
+            </div>
+            <i class="material-icons nav__icon">edit</i>
+            <i class="material-icons nav__icon">delete</i>
+			</div>
+           
+		</div>
+	</div>
+</div>
+

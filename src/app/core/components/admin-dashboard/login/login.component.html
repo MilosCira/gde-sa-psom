@@ -6,16 +6,16 @@
       <label for="email">Email Address</label>
       <div class="sec-2">
  
-        <input type="email" name="email" placeholder="Username@gmail.com"/>
+        <input [(ngModel)]="email" type="email" name="email" placeholder="Username@gmail.com"/>
       </div>
     </div>
     <div class="password">
       <label for="password">Password</label>
       <div class="sec-2">
  
-        <input class="pas" type="password" name="password" placeholder="············"/>
+        <input [(ngModel)]="password" class="pas" type="password" name="password" placeholder="············"/>
      
       </div>
     </div>
-    <button class="login">Login </button>
+    <button (click)="loginSubmit()" class="login">Login </button>
   </div>
