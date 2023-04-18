@@ -33,4 +33,19 @@ export class CateringService {
         const uri = 'kafe/starost';
         return this.http.get(uri, {})
     }
+
+    getSuggestedCaterings(): Observable<any> {
+        const uri = 'kafe/predloziKafic';
+        return this.http.get(uri, {})
+    }
+
+    acceptCatering(data: any): Observable<any> {
+        const uri = 'kafe/info_dodaj_ug';
+        return this.http.post(uri, data)
+    }
+
+    declineCatering(data: any): Observable<any> {
+        const uri = 'kafe/delete_suggested';
+        return this.http.post(uri, data)
+    }
 }

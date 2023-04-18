@@ -1,0 +1,33 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+.suggested-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+    .suggested-wrapper {
+        border: 1px solid gray;
+        border-radius: 8px;
+        padding: 10px;
+
+        .info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            span {
+                color: #fbfbfb;
+            }
+            .accept {
+                background-color: greenyellow;
+                outline: none;
+                border: none;
+                border-radius: 8px;
+                margin-right: 6px;
+            }
+            .decline {
+                background-color: red;
+                outline: none;
+                border: none;
+                border-radius: 8px;
+            }
+        }
+    }
+}

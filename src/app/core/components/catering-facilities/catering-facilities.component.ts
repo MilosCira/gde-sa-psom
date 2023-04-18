@@ -86,6 +86,8 @@ export class CateringFacilitiesComponent implements OnInit {
   getCateringFacilities() {
     this.cs.getLimitCatering().subscribe((res) => {
       if (res) {
+        console.log(res);
+
         this.showLoader = false;
         this.cs.getAllPlaces().subscribe((res) => {
           this.places = this.translocoService.translate(res?.ugo);

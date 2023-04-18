@@ -9,7 +9,7 @@ export class ImageBase64Service {
 
     sanitizer(url: string) {
         return this.domSanitizer.bypassSecurityTrustResourceUrl(
-            `data:image/*;base64,${url}`
+            `data:image/jpeg;base64,${url}`
         );
     }
 

@@ -17,12 +17,13 @@
     <div class="input-text">
       <span>{{ "Slika kafica" | transloco }}</span>
       <img class="short-image" *ngIf="imgModal"  [src]="imgModal" alt="">
-      <input formControlName="iuo_slika"   (change)="onFileChange($event)" class="custom-modal-input" type="file" />
+      <input formControlName="iuo_slika"   (change)="handleUpload($event)" class="custom-modal-input" type="file" />
     </div>
     <div class="input-text">
       <span>{{ "Slika kafica unutra" | transloco }}</span>
-      <input formControlName="iuo_slika_unutra" (change)="handleUpload($event)" class="custom-modal-input" type="file" />
+      <img class="short-image" *ngIf="imgModalInside"  [src]="imgModalInside" alt="">
+      <input formControlName="iuo_slika_unutra" (change)="handleUploadInside($event)" class="custom-modal-input" type="file" />
     </div>
-    <button (click)="submitForm(createCatering)" type="submit">{{'dodaj'|transloco}}</button>
+    <button [disabled]="createCatering.invalid" (click)="submitForm(createCatering)" type="submit">{{'dodaj'|transloco}}</button>
   </form>
 </div>

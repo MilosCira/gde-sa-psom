@@ -10,8 +10,9 @@ import { AddCaffeModalService } from './add-caffe.service';
 export class AddCaffeModalComponent implements OnInit {
   createCatering: FormGroup;
   imgModal: any
+  imgModalInside: any
   fileImg: any
-  name: any
+  fileImageInside: any | null
   constructor(
     private addCaffeService: AddCaffeModalService,
     private fb: FormBuilder
@@ -34,66 +35,42 @@ export class AddCaffeModalComponent implements OnInit {
 
     });
   }
-  onFileChange(event: any) {
-    const reader = new FileReader();
-
-    if (event.target.files && event.target.files.length) {
-      const [file] = event.target.files;
-      reader.readAsDataURL(file);
-
-      reader.onload = () => {
-
-        this.imgModal = reader.result as string;
-
-        ;
-
-      };
-
-    }
-  }
-  //Gets called when the user selects an image
-  public onFileChanged(event?: any) {
-    //Select File
-    this.fileImg = event.target.files[0];
-    console.log(this.fileImg);
-
-    // const uploadImageData = new FormData();
-    // uploadImageData.append('iuo_slika', event.target.files[0]);
-  }
-
   handleUpload(event?: any) {
-    // console.log(event);
 
-    // this.fileImg = event?.target?.files[0];
+    const img = event?.target?.files[0];
+    this.fileImg = img;
     const reader = new FileReader();
-    reader.readAsDataURL(this.fileImg);
+    reader.readAsDataURL(img);
     reader.onload = () => {
       console.log(reader);
       this.imgModal = reader.result
-      // console.log(reader.result);
     };
 
   }
-  getFileModal(e: any) {
-    let files: File[] = e.files;
-    if (files.length < 1) {
-      return;
-    }
+  handleUploadInside(event?: any) {
+    // console.log(event);
 
-    let file = files[0];
-    this.imgModal = file;
+    const img = event?.target?.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(img);
+    reader.onload = () => {
+      console.log(reader);
+      this.imgModalInside = reader.result
+    };
 
   }
+
   submitForm(value: any) {
 
     const data = {
       ...value?.value,
-      // iuo_slika: this.fileImg?.name
+      iuo_slika: this.imgModal,
+      iuo_slika_unutra: this.imgModalInside
     }
 
     console.log(data);
 
-    this.addCaffeService.addCatering(data).subscribe((res) => {
+    this.addCaffeService.suggestCatering(data).subscribe((res) => {
       console.log(res);
 
     })

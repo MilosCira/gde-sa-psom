@@ -1,1 +1,40 @@
-<p>suggested-catering-facilities works!</p>
+<div class="suggested-container">
+<div class="suggested-wrapper" *ngFor="let sug of suggested">
+    <ngb-carousel [interval]="10000" #carousel (slide)="onSlide($event)">
+        <ng-template ngbSlide>
+
+          <div class="picsum-img-wrapper">
+            <img
+              [src]="sug?.iuo_slika ? sug?.iuo_slika : '../../../../../assets/comming.jpg'"
+              alt="My image outside"
+              height="200" 
+              width="100%"
+            />
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img
+              [src]="
+              sug?.sug?.iuo_slika_unutra ? sug?.iuo_slika_unutra : '../../../../../assets/comming.jpg'
+              "
+              height="200"
+              width="100%"
+              alt="My image inside"
+            />
+          </div>
+        </ng-template>
+      </ngb-carousel>
+      <div class="info">
+          <span>Ime: {{sug?.iuo_ime}}</span>
+          <span>Adresa: {{sug?.iuo_adressa}}</span>
+          <span>Velicina: {{sug?.sta_ime}}</span>
+          <span>Objekat: {{sug?.ugo_ime}}</span>
+          <span>Basta: {{sug?.bas_naziv}}</span>
+          <span>Opstina:{{sug?.ops_ime}}</span>
+          <button (click)="sendData(sug)" class="accept">Accept</button>
+          <button (click)="declineCatering(sug.pr_id)" class="decline">Decline</button>
+        </div>
+      </div>
+      {{message}}
+    </div>

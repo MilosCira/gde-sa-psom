@@ -1,5 +1,5 @@
-$p: hsl(213deg 85% 97%);
-$s: hsl(233deg 36% 38%);
+$p: rgb(241, 247, 254);
+$s: rgb(62, 70, 132);
 
 @mixin screen {
     background: $p;
@@ -22,26 +22,22 @@ $s: hsl(233deg 36% 38%);
         margin-top: -3em;
     }
     .email {
-        background: hsl(0deg 0% 100%);
+        background: rgb(255, 255, 255);
         box-shadow: 0 0 2em hsl(231deg 62% 94%);
         padding: 1em;
         display: flex;
         flex-direction: column;
         gap: 0.5em;
         border-radius: 20px;
-        color: hsl(0deg 0% 30%);
+        color: gray;
         margin-top: -3em;
         input {
             outline: none;
             border: none;
             &::placeholder {
-                color: hsl(0deg 0% 0%);
+                color: rgb(9, 9, 9);
                 font-size: 0.9em;
             }
-        }
-        ion-icon {
-            color: hsl(0deg 0% 30%);
-            margin-bottom: -0.2em;
         }
     }
     .password {
@@ -52,12 +48,12 @@ $s: hsl(233deg 36% 38%);
         flex-direction: column;
         gap: 0.5em;
         border-radius: 20px;
-        color: hsl(0deg 0% 30%);
+        color: gray;
         input {
             outline: none;
             border: none;
             &::placeholder {
-                color: hsl(0deg 0% 0%);
+                color: gray;
                 font-size: 0.9em;
             }
         }
@@ -80,7 +76,7 @@ $s: hsl(233deg 36% 38%);
     .footer {
         display: flex;
         font-size: 0.7em;
-        color: hsl(0deg 0% 37%);
+        color: #5e5e5e;
         gap: 14em;
         padding-bottom: 10em;
         span {

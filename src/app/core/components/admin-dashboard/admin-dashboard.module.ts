@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import {
     NgbNavModule,
     NgbModule,
-    NgbPaginationModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { AdminDashboardComponent } from './admin-dashboard.component';
 import { EditCateringFacilitiesComponent } from './edit-catering-facilities/edit-catering-facilities.component';
@@ -24,8 +23,8 @@ import { BrowserModule } from '@angular/platform-browser';
         FormsModule,
         NgbNavModule,
         NgbModule,
-        NgbPaginationModule,
     ],
+    exports: [NgbModule],
     providers: [LoginService],
 })
 export class AdminModule { }
