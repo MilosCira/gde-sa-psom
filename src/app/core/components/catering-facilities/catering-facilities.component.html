@@ -54,14 +54,15 @@
         trackBy: identity
       "
       [siteLink]="data?.iuo_link_web"
-      [images]="data?.slikaKafica ? data?.slikaKafica : null"
+      [images]="data?.iuo_slika_base64 ? data?.iuo_slika_base64: null"
       [sizeOfDog]="data?.sta_ime"
       [location]="data?.iuo_adressa"
       [garden]="data?.bas_naziv"
       [township]="data?.ops_ime"
-      [imagesInside]="data?.slikaUnutra ? data?.slikaUnutra : null"
+      [imagesInside]="data?.iuo_slika_base64_unutra ? data?.iuo_slika_base64_unutra : null"
       [nameOfObject]="data?.iuo_ime"
       [city]="data?.grd_ime"
+     
     >
     </app-custom-card>
   </div>

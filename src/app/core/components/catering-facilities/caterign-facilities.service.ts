@@ -34,6 +34,11 @@ export class CateringService {
         return this.http.get(uri, {})
     }
 
+    getGarden(): Observable<any> {
+        const uri = 'kafe/basta';
+        return this.http.get(uri, {})
+    }
+
     getSuggestedCaterings(): Observable<any> {
         const uri = 'kafe/predloziKafic';
         return this.http.get(uri, {})
@@ -46,6 +51,11 @@ export class CateringService {
 
     declineCatering(data: any): Observable<any> {
         const uri = 'kafe/delete_suggested';
+        return this.http.post(uri, data)
+    }
+
+    deleteCatering(data: any): Observable<any> {
+        const uri = 'kafe/delete-active-catering';
         return this.http.post(uri, data)
     }
 }

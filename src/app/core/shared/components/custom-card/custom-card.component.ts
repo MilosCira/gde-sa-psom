@@ -17,6 +17,7 @@ export class CustomCardComponent implements OnInit {
   @Input() township: any;
   @Input() city: any;
   @Input() imagesInside: any;
+
   @ViewChild('carousel', { static: true }) carousel: NgbCarousel | any;
   images1 = [62].map((n) => `https://picsum.photos/id/${n}/900/500`);
 

@@ -4,7 +4,6 @@ import { AddCaffeModalState } from "./add-caffe.state";
 import { AddCaffeModalComponent } from './add-caffe-modal.component';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs";
-import { ISuggestedCaffe } from "./ISuggestedCatering";
 
 @Injectable()
 export class AddCaffeModalService {
@@ -33,11 +32,12 @@ export class AddCaffeModalService {
         this.state?.modal?.close();
     }
 
-    suggestCatering(data: ISuggestedCaffe): Observable<any> {
-        console.log(data);
-
+    suggestCatering(data: any): Observable<any> {
         const uri = 'kafe/predloziKafic';
         return this.http.post(uri, data)
     }
-
+    updateCatering(data: any): Observable<any> {
+        const uri = 'kafe/update-catering';
+        return this.http.post(uri, data)
+    }
 }

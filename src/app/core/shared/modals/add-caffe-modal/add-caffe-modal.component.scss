@@ -1,23 +1,71 @@
 @import "~bootstrap/scss/bootstrap";
 @import "../../../theme/modals.scss";
+::ng-deep {
+    .ng-dropdown-panel .scroll-host {
+        background: #adadad !important;
+        left: -4px;
+    }
+}
+.drop-downs {
+    display: grid;
+    grid-template-columns: repeat(2, 190px);
+    gap: 1rem;
+    @media screen and (max-width: 450px) {
+        grid-template-columns: 1fr !important;
+    }
+}
 .add-caffe-container {
     max-width: 45rem;
     min-width: 20rem;
     min-height: 10rem;
     // background-color: #6c6c6c;
     border-radius: 8px;
+    .title-modals {
+        text-align: center;
+        padding-top: 3.5rem;
+    }
+    .submit-btn {
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        background-color: #414141;
+        color: #fbfbfb;
+        font-size: 18px;
+        padding: 10px;
+        margin-top: 1rem;
+        &:disabled {
+            background-color: #adadad;
+        }
+    }
     .form-wrapper {
         display: grid;
-        gap: 1rem;
-        padding: 4rem 0;
+        gap: 0.5rem;
+        padding: 1rem 0;
         width: 100%;
         justify-content: center;
         align-items: center;
+        .req {
+            font-size: 12px;
+        }
+        .ng-select {
+            border: 1px solid gray;
+            border-radius: 8px;
+            padding: 5px;
+            // width: 190px;
+            cursor: pointer;
+        }
         .input-text {
             display: grid;
+            span {
+                white-space: nowrap;
+            }
             .short-image {
-                width: 200px;
-                height: 200px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                height: 122px;
+                margin-bottom: 8px;
+                border-radius: 8px;
             }
         }
         .custom-modal-input {

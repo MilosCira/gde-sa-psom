@@ -1,0 +1,46 @@
+.footer-container {
+    background-color: #000;
+    height: 200px;
+    display: grid;
+    margin-top: 1rem;
+    .footer-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .social {
+        display: flex;
+        align-items: center;
+        .s-ig {
+            margin-right: 12px;
+        }
+        img {
+            cursor: pointer;
+        }
+    }
+    .img-text {
+        display: flex;
+        flex-direction: column;
+        span {
+            color: #fbfbfb;
+            margin-left: 16px;
+        }
+    }
+    .logo {
+        height: 125px;
+        width: 150px;
+    }
+    .footer-bottom {
+        background-color: rgb(17, 17, 17);
+        text-align: center;
+        color: #fbfbfb;
+        font-size: 12px;
+        font-weight: 400;
+        padding: 12px 0;
+    }
+    .divider {
+        height: 1px;
+        width: 100;
+        background-color: gray;
+    }
+}

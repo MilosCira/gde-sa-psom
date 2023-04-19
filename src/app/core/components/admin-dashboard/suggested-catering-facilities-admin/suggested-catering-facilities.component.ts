@@ -1,13 +1,18 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbCarousel,
+  NgbSlideEvent,
+  NgbSlideEventSource,
+} from '@ng-bootstrap/ng-bootstrap';
 import { ImageBase64Service } from 'src/app/core/interceptor/utils/base64.converter';
+import { SuccessModalService } from 'src/app/core/shared/modals/success/success-modal.service';
 import { CateringService } from '../../catering-facilities/caterign-facilities.service';
 
 @Component({
   selector: 'app-suggested-catering-facilities',
   templateUrl: './suggested-catering-facilities.component.html',
   styleUrls: ['./suggested-catering-facilities.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class SuggestedCateringFacilitiesComponent implements OnInit {
   suggested: any;
@@ -19,27 +24,27 @@ export class SuggestedCateringFacilitiesComponent implements OnInit {
   pauseOnHover = true;
   pauseOnFocus = true;
   message: string;
-  constructor(private cs: CateringService, public imSer: ImageBase64Service) { }
+  constructor(
+    private cs: CateringService,
+    public imSer: ImageBase64Service,
+    private successSer: SuccessModalService
+  ) { }
 
   ngOnInit(): void {
-    this.getSuggested()
+    this.getSuggested();
   }
 
   declineCatering(pr_id: number) {
     const declineData = {
       pr_id: pr_id,
-      sid: localStorage.getItem('sid')
-    }
-    console.log(declineData);
+      sid: localStorage.getItem('sid'),
+    };
 
     this.cs.declineCatering(declineData).subscribe((res) => {
-      this.getSuggested()
-      console.log(res);
-      this.message = res?.delete;
-      setTimeout(() => {
-        this.message = ''
-      }, 6000);
-    })
+      this.successSer.open({ text: 'Uspesno ste odbili objekat' }).then(() => {
+        this.getSuggested();
+      });
+    });
   }
   sendData(data: any) {
     const dataValue = {
@@ -53,17 +58,17 @@ export class SuggestedCateringFacilitiesComponent implements OnInit {
       sta_id: data.sta_id,
       iuo_adressa: data?.iuo_adressa,
       iuo_link_web: data?.iuo_link_web,
-      sid: localStorage.getItem('sid')
-    }
+      sid: localStorage.getItem('sid'),
+    };
     this.cs.acceptCatering(dataValue).subscribe((res) => {
       console.log(res);
 
-      this.getSuggested();
-
-    })
-    console.log(dataValue);
-
-
+      this.successSer
+        .open({ text: res?.mess ? res?.mess : res?.message })
+        .then(() => {
+          this.getSuggested();
+        });
+    });
   }
   togglePaused() {
     if (this.paused) {
@@ -77,11 +82,16 @@ export class SuggestedCateringFacilitiesComponent implements OnInit {
     if (
       this.unpauseOnArrow &&
       slideEvent.paused &&
-      (slideEvent.source === NgbSlideEventSource.ARROW_LEFT || slideEvent.source === NgbSlideEventSource.ARROW_RIGHT)
+      (slideEvent.source === NgbSlideEventSource.ARROW_LEFT ||
+        slideEvent.source === NgbSlideEventSource.ARROW_RIGHT)
     ) {
       this.togglePaused();
     }
-    if (this.pauseOnIndicator && !slideEvent.paused && slideEvent.source === NgbSlideEventSource.INDICATOR) {
+    if (
+      this.pauseOnIndicator &&
+      !slideEvent.paused &&
+      slideEvent.source === NgbSlideEventSource.INDICATOR
+    ) {
       this.togglePaused();
     }
   }
@@ -89,7 +99,6 @@ export class SuggestedCateringFacilitiesComponent implements OnInit {
     this.cs.getSuggestedCaterings().subscribe((res) => {
       this.suggested = res?.obj;
       console.log(res);
-
-    })
+    });
   }
 }

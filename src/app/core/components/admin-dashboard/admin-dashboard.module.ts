@@ -8,8 +8,9 @@ import { AdminDashboardComponent } from './admin-dashboard.component';
 import { EditCateringFacilitiesComponent } from './edit-catering-facilities/edit-catering-facilities.component';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/login.service';
-import { SuggestedCateringFacilitiesComponent } from './suggested-catering-facilities/suggested-catering-facilities.component';
+import { SuggestedCateringFacilitiesComponent } from './suggested-catering-facilities-admin/suggested-catering-facilities.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -23,6 +24,7 @@ import { BrowserModule } from '@angular/platform-browser';
         FormsModule,
         NgbNavModule,
         NgbModule,
+        SharedModule
     ],
     exports: [NgbModule],
     providers: [LoginService],

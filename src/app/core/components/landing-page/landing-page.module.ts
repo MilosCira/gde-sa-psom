@@ -31,7 +31,7 @@ import { CateringService } from '../catering-facilities/caterign-facilities.serv
         RouterModule,
 
     ],
-    exports: [NgbDropdownModule, NavbarComponent, RouterModule],
+    exports: [NgbDropdownModule, NavbarComponent, RouterModule, FooterComponent],
     providers: [CateringService],
 })
 export class LandingPageModule { }

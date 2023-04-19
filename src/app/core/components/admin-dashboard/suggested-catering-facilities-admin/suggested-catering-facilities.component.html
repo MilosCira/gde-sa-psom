@@ -1,5 +1,5 @@
 <div class="suggested-container">
-<div class="suggested-wrapper" *ngFor="let sug of suggested">
+<div class="suggested-wrapper" *ngFor="let sug of suggested" ngIf="sug">
     <ngb-carousel [interval]="10000" #carousel (slide)="onSlide($event)">
         <ng-template ngbSlide>
 
@@ -36,5 +36,9 @@
           <button (click)="declineCatering(sug.pr_id)" class="decline">Decline</button>
         </div>
       </div>
-      {{message}}
     </div>
+    <ng-template success>
+      <app-success>
+
+      </app-success>
+    </ng-template>

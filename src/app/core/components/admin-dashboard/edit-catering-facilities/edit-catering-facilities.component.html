@@ -6,7 +6,7 @@
 		
 			<div class="info">
 				<img
-					[src]="cate?.slikaKafica ?cate?.slikaKafica : '../../../../../assets/comming.jpg' "
+					[src]="cate?.slikaKafica ?cate?.iuo_slika_base64: '../../../../../assets/comming.jpg' "
 					class="me-2"
 					style="width: 150px; height: 150px;"
 				/>
@@ -16,11 +16,20 @@
                 <p>Tip: {{cate?.ugo_ime}}</p>
                 <p>Starost: {{cate?.sta_ime}}</p>
             </div>
-            <i class="material-icons nav__icon">edit</i>
-            <i class="material-icons nav__icon">delete</i>
+            <i (click)="editCatering(cate)" class="material-icons nav__icon">edit</i>
+            <i (click)="deleteCatering(cate)" class="material-icons nav__icon">delete</i>
 			</div>
            
 		</div>
 	</div>
 </div>
+<ng-template addCaffe>
+	<app-add-caffe-modal [editMode]="true" >
 
+	</app-add-caffe-modal>
+</ng-template>
+<ng-template success>
+	<app-success>
+
+	</app-success>
+  </ng-template>

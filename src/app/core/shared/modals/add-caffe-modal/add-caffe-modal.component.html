@@ -1,29 +1,114 @@
 <div class="add-caffe-container twog-modal">
   <img class="close-button" (click)="close()" />
-  <h2>{{ "predlozi" | transloco }}</h2>
+  <h2 class="title-modals">{{ "predlozi" | transloco }}</h2>
   <form class="form-wrapper" [formGroup]="createCatering">
+    <span class="req">* {{ "required" | transloco }}</span>
     <div class="input-text">
-      <span>{{ "Ime objekta" | transloco }}</span>
+      <span>{{ "Ime objekta" | transloco }}*</span>
       <input formControlName="iuo_ime" class="custom-modal-input" type="text" />
     </div>
     <div class="input-text">
-      <span>{{ "Adresa objekta" | transloco }}</span>
-      <input formControlName="iuo_adressa" class="custom-modal-input" type="text" />
+      <span>{{ "Adresa objekta" | transloco }}*</span>
+      <input
+        formControlName="iuo_adressa"
+        class="custom-modal-input"
+        type="text"
+      />
     </div>
     <div class="input-text">
-      <span>{{ "Link ka sajtu" | transloco }}</span>
-      <input formControlName="iuo_link_web" class="custom-modal-input" type="text" />
+      <span>{{ "Link ka sajtu" | transloco }}*</span>
+      <input
+        formControlName="iuo_link_web"
+        class="custom-modal-input"
+        type="text"
+      />
     </div>
     <div class="input-text">
-      <span>{{ "Slika kafica" | transloco }}</span>
-      <img class="short-image" *ngIf="imgModal"  [src]="imgModal" alt="">
-      <input formControlName="iuo_slika"   (change)="handleUpload($event)" class="custom-modal-input" type="file" />
+      <span>{{ "Slika kafica" | transloco }}*</span>
+      <img class="short-image" *ngIf="imgModal" [src]="imgModal" alt="" />
+      <input
+        formControlName="iuo_slika"
+        (change)="handleUpload($event)"
+        class="custom-modal-input"
+        type="file"
+      />
     </div>
     <div class="input-text">
       <span>{{ "Slika kafica unutra" | transloco }}</span>
-      <img class="short-image" *ngIf="imgModalInside"  [src]="imgModalInside" alt="">
-      <input formControlName="iuo_slika_unutra" (change)="handleUploadInside($event)" class="custom-modal-input" type="file" />
+      
+      <img  class="short-image" *ngIf="imgModalInside" [src]="imgModalInside" alt="">
+      <input
+        formControlName="iuo_slika_unutra"
+        (change)="handleUploadInside($event)"
+        class="custom-modal-input"
+        type="file"
+      />
     </div>
-    <button [disabled]="createCatering.invalid" (click)="submitForm(createCatering)" type="submit">{{'dodaj'|transloco}}</button>
+ 
+    
+   
+    <!--Using items input-->
+    <div class="input-text">
+      <span>{{ "Choose size" | transloco }}*</span>
+      <ng-select formControlName="sta_id">
+        <ng-option *ngFor="let size of dogSize" [value]="size.id">{{size.ime | transloco}}</ng-option>
+     </ng-select>
+     
+    </div>
+
+     <!--Using items input-->
+     <div class="input-text">
+      <span>{{ "type" | transloco }}*</span>
+      <ng-select formControlName="ugo_id">
+        <ng-option *ngFor="let ugo of cFacilities" [value]="ugo.id">{{ugo.ime | transloco}}</ng-option>
+     </ng-select>
+    
+    </div>
+
+    <div class="drop-downs">
+     <!--Using items input-->
+     <div class="input-text">
+      <span>{{ "Choose town" | transloco }}*</span>
+      <ng-select
+        [items]="town"
+        bindLabel="ime"
+        bindValue="id"
+        formControlName="ops_id"
+        [searchable]="true"
+      >
+      </ng-select>
+    </div>
+  
+     <!--Using items input-->
+     <div class="input-text">
+      <span>{{ "Choose garden" | transloco }}*</span>
+      <ng-select formControlName="bas_id">
+        <ng-option *ngFor="let gar of garden" [value]="gar.id">{{gar.ime | transloco}}</ng-option>
+     </ng-select>
+  
+    </div>
+  </div>
+    <button
+      [disabled]="createCatering.invalid"
+       *ngIf="!editMode"
+      (click)="submitForm(createCatering)"
+      class="submit-btn"
+      type="submit"
+    >
+      {{ "dodaj" | transloco }}
+    </button>
+
+    <button
+      [disabled]="createCatering.invalid"
+       *ngIf="editMode"
+      (click)="submitFormUpdate(createCatering)"
+      class="submit-btn"
+      type="submit"
+    >
+      {{ "Update" | transloco }}
+    </button>
   </form>
 </div>
+<ng-template success>
+  <app-success></app-success>
+</ng-template>

@@ -11,11 +11,18 @@ import { AddCaffeModalState } from './modals/add-caffe-modal/add-caffe.state';
 import { CustomCardComponent } from './components/custom-card/custom-card.component';
 import { TranslocoRootModule } from '../transloco/transloco.module';
 import { LoaderComponent } from './components/loader/loader.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { SuccessModalComponent } from './modals/success/success-modal.component';
+import { SuccessModalDirective } from './modals/success/success-modal.directive';
+import { SuccessModalService } from './modals/success/success-modal.service';
+import { SuccessModalState } from './modals/success/success-modal.state';
 const components = [
     AddCaffeModalComponent,
     AddCaffeModalDirective,
     CustomCardComponent,
     LoaderComponent,
+    SuccessModalComponent,
+    SuccessModalDirective,
 ];
 const modules = [
     BrowserModule,
@@ -28,9 +35,14 @@ const modules = [
 ];
 @NgModule({
     declarations: [...components],
-    imports: [...modules],
+    imports: [...modules, NgSelectModule],
 
-    providers: [AddCaffeModalService, AddCaffeModalState],
+    providers: [
+        AddCaffeModalService,
+        AddCaffeModalState,
+        SuccessModalService,
+        SuccessModalState,
+    ],
     exports: [...components, ...modules],
 })
 export class SharedModule { }

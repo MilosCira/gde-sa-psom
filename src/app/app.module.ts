@@ -1,3 +1,4 @@
+import { LandingPageModule } from './core/components/landing-page/landing-page.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     CoreModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: [CoreModule],
   providers: [
