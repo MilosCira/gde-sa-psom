@@ -11,12 +11,14 @@ import { AdminModule } from './admin-dashboard/admin-dashboard.module';
 import { CateringFacilitiesComponent } from './catering-facilities/catering-facilities.component';
 import { LandingPageModule } from './landing-page/landing-page.module';
 import { NotFoundedComponent } from './not-founded/not-founded.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @NgModule({
     declarations: [
         AboutPageComponent,
         CateringFacilitiesComponent,
         NotFoundedComponent,
+        ContactPageComponent,
     ],
     imports: [
         BrowserModule,
