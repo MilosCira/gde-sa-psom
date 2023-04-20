@@ -11,6 +11,7 @@ h3 {
     font-size: 24px;
     text-align: center;
     color: #fbfbfb;
+    padding-bottom: 4.5rem;
 }
 /*--------------------------------------------
             #Start Timeline Rules
@@ -184,18 +185,22 @@ h3 {
 
 #timeline ul li:first-child .cont {
     border-color: #7ab800;
+    transform: translate(0, -94px);
 }
 
 #timeline ul li:nth-child(2) .cont {
     border-color: #0085c3;
+    transform: translate(0, -54px);
 }
 
 #timeline ul li:nth-child(3) .cont {
     border-color: #f2af00;
+    transform: translate(0, -66px);
 }
 
 #timeline ul li:nth-child(4) .cont {
     border-color: #ce1126;
+    transform: translate(0, -64px);
 }
 
 #timeline ul li:last-child .cont {
@@ -203,7 +208,7 @@ h3 {
 }
 
 #timeline ul li:nth-child(odd) .cont {
-    left: 30px;
+    left: 37px;
 }
 
 #timeline ul li:nth-child(even) .cont {
@@ -306,7 +311,7 @@ h3 {
     }
 
     #timeline ul li:nth-child(even) .cont {
-        left: -175px;
+        left: -161px;
     }
 
     #timeline ul li .cont p,
@@ -317,6 +322,25 @@ h3 {
     #timeline ul li .cont time {
         width: 80px;
         left: calc(100% / 2 - 40px);
+    }
+    #timeline ul li:first-child .cont {
+        border-color: #7ab800;
+        transform: translate(0, -133px);
+    }
+
+    #timeline ul li:nth-child(2) .cont {
+        border-color: #0085c3;
+        transform: translate(0, -76px);
+    }
+
+    #timeline ul li:nth-child(3) .cont {
+        border-color: #f2af00;
+        transform: translate(0, -98px);
+    }
+
+    #timeline ul li:nth-child(4) .cont {
+        border-color: #ce1126;
+        transform: translate(0, -82px);
     }
 }
 /*-------------------------------------

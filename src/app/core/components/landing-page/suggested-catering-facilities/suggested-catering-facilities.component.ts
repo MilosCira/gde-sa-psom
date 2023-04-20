@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageBase64Service } from 'src/app/core/interceptor/utils/base64.converter';
 import { CateringService } from '../../catering-facilities/caterign-facilities.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-suggested-catering-facilities',
@@ -12,13 +13,11 @@ export class SuggestedCateringFacilitiesComponent implements OnInit {
     private cService: CateringService,
     public imgServ: ImageBase64Service
   ) { }
-  public randomCateringFacilties: any;
+  public randomCateringFacilties$: Observable<any>;
   ngOnInit(): void {
     this.getRandomCF();
   }
   getRandomCF() {
-    this.cService.getRandomCateringFacilties().subscribe((res) => {
-      this.randomCateringFacilties = res;
-    });
+    this.randomCateringFacilties$ = this.cService.getRandomCateringFacilties();
   }
 }

@@ -5,6 +5,11 @@
         background: #adadad !important;
         left: -4px;
     }
+    .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+        padding-left: 4px;
+        margin-bottom: 4px;
+        white-space: inherit !important;
+    }
 }
 .drop-downs {
     display: grid;

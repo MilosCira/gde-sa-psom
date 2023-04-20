@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
 import { ImageBase64Service } from '../../interceptor/utils/base64.converter';
 import { CateringService } from './caterign-facilities.service';
@@ -11,7 +11,7 @@ import { CateringStore } from './state/catering.store';
   styleUrls: ['./catering-facilities.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class CateringFacilitiesComponent implements OnInit {
+export class CateringFacilitiesComponent implements OnInit, OnDestroy {
   allCateringFacilties: any;
   countNumber: number | undefined;
   searchWord: string = '';
@@ -112,5 +112,11 @@ export class CateringFacilitiesComponent implements OnInit {
   /**Function retrun id */
   public identity(index: number, item: any): number {
     return index;
+  }
+  ngOnDestroy(): void {
+    this.allCateringFacilties.unsubscribe();
+    this.places.unsubscribe();
+    this.sizeOfDogs.unsubscribe();
+    this.towns.unsubscribe();
   }
 }

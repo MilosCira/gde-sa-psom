@@ -4,12 +4,13 @@ import { Resolve, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { catchError, tap, take } from 'rxjs/operators';
 import { CateringService } from '../caterign-facilities.service';
+import { ICateringFacilities } from './catering-facilities.interface';
 import { CateringState, CateringStore } from './catering.store';
 
 @Injectable({
     providedIn: 'root',
 })
-export class CateringResolver implements Resolve<any[]> {
+export class CateringResolver implements Resolve<ICateringFacilities[]> {
     pageIndex: number = 1;
     pageSize: number = 15;
     constructor(
@@ -26,9 +27,10 @@ export class CateringResolver implements Resolve<any[]> {
                 this.router.navigate(['/']);
                 return of('No catering data for...');
             }),
-            tap((cs: any) => {
+            tap((cs: ICateringFacilities) => {
+                console.log(cs);
 
-                this.cateringStore.set([cs?.objekat2]);
+                this.cateringStore.set([cs]);
             })
         );
     }

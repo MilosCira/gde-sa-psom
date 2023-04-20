@@ -18,9 +18,9 @@ const routes: Routes = [
   {
     path: 'all-facilites',
     component: CateringFacilitiesComponent,
-    // resolve: {
-    //   catering: CateringResolver,
-    // },
+    resolve: {
+      catering: CateringResolver,
+    },
   },
   {
     path: 'log123*in',

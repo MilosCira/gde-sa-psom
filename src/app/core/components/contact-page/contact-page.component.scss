@@ -74,13 +74,15 @@ h4 {
 
 .link {
     margin: 10px;
+    background-color: #fbfbfb;
+    border-radius: 8px;
     cursor: pointer;
 }
 
 img {
     width: 45px;
     height: 45px;
-    filter: hue-rotate(220deg) drop-shadow(2px 4px 4px #0006);
+    // filter: hue-rotate(220deg) drop-shadow(2px 4px 4px #0006);
     transition: 0.2s;
     user-select: none;
 }

@@ -4,7 +4,7 @@ import { CateringState, CateringStore } from './catering.store';
 
 
 @Injectable({ providedIn: 'root' })
-export class CateringQuery extends QueryEntity<any> {
+export class CateringQuery extends QueryEntity<CateringState> {
     constructor(protected cStore: CateringStore) {
         super(cStore);
     }
