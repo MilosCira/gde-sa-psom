@@ -59,6 +59,6 @@ export class EditCateringFacilitiesComponent implements OnInit, OnDestroy {
     });
   }
   ngOnDestroy(): void {
-    this.caterings.unsubscribe();
+    this.caterings?.unsubscribe();
   }
 }

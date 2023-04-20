@@ -4,6 +4,7 @@ import { ImageBase64Service } from '../../interceptor/utils/base64.converter';
 import { CateringService } from './caterign-facilities.service';
 import { CateringQuery } from './state/catering-query';
 import { CateringStore } from './state/catering.store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-catering-facilities',
@@ -11,12 +12,12 @@ import { CateringStore } from './state/catering.store';
   styleUrls: ['./catering-facilities.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class CateringFacilitiesComponent implements OnInit, OnDestroy {
+export class CateringFacilitiesComponent implements OnInit {
   allCateringFacilties: any;
   countNumber: number | undefined;
   searchWord: string = '';
   showLoader: boolean = true;
-  places: any
+  places: any;
   sizeOfDogs: any;
   towns: any;
   selectedPlaces: any;
@@ -92,7 +93,7 @@ export class CateringFacilitiesComponent implements OnInit, OnDestroy {
       if (res) {
         this.showLoader = false;
         this.cs.getAllPlaces().subscribe((res) => {
-          this.places = this.translocoService.translate(res?.ugo);
+          this.places = res?.ugo;
         })
 
         this.cs.getAllTown().subscribe((res) => {
@@ -101,7 +102,7 @@ export class CateringFacilitiesComponent implements OnInit, OnDestroy {
 
         this.cs.getAllSizeOfDogs().subscribe((res) => {
 
-          this.sizeOfDogs = this.translocoService.translate(res?.starost)
+          this.sizeOfDogs = res?.starost
         })
       }
       this.countNumber = res?.count?.broj;
@@ -113,10 +114,5 @@ export class CateringFacilitiesComponent implements OnInit, OnDestroy {
   public identity(index: number, item: any): number {
     return index;
   }
-  ngOnDestroy(): void {
-    this.allCateringFacilties.unsubscribe();
-    this.places.unsubscribe();
-    this.sizeOfDogs.unsubscribe();
-    this.towns.unsubscribe();
-  }
+
 }

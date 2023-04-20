@@ -100,6 +100,6 @@ export class SuggestedCateringFacilitiesComponent implements OnInit, OnDestroy {
     });
   }
   ngOnDestroy(): void {
-    this.suggested.unsubscribe();
+    this.suggested?.unsubscribe();
   }
 }
