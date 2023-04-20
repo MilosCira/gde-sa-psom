@@ -26,7 +26,6 @@ export class EditCateringFacilitiesComponent implements OnInit {
     this.getCaterings();
   }
   editCatering(data: any) {
-    console.log(data);
 
     const dataArr = {
       name: data?.iuo_ime,
@@ -41,14 +40,12 @@ export class EditCateringFacilitiesComponent implements OnInit {
       iuo_id: data?.iuo_id
     };
     this.addCaffeSer.open({ dataArr });
-    console.log(dataArr);
   }
   deleteCatering(data: any) {
     const datas = {
       iuo_id: data?.iuo_id,
       sid: localStorage.getItem('sid'),
     };
-    console.log(datas);
 
     this.cService.deleteCatering(datas).subscribe((res) => {
       this.successModalS.open({ text: 'Uspesno obrisan kafic' }).then(() => {

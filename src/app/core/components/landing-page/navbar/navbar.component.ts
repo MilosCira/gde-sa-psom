@@ -25,7 +25,6 @@ export class NavbarComponent implements OnInit {
   }
   logout() {
     this.loginS.loguout().subscribe((res) => {
-      console.log(res);
       this.router.navigate(['/']);
       // window.location.reload();
       localStorage.removeItem('sid');

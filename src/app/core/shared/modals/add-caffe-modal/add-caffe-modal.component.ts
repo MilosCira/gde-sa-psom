@@ -60,18 +60,15 @@ export class AddCaffeModalComponent implements OnInit {
     const reader = new FileReader();
     reader.readAsDataURL(img);
     reader.onload = () => {
-      console.log(reader);
       this.imgModal = reader.result;
     };
   }
   handleUploadInside(event?: any) {
-    // console.log(event);
 
     const img = event?.target?.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(img);
     reader.onload = () => {
-      console.log(reader);
       this.imgModalInside = reader.result;
     };
   }
@@ -91,8 +88,6 @@ export class AddCaffeModalComponent implements OnInit {
   }
 
   submitFormUpdate(value: any) {
-    console.log(value?.value);
-
     const data = {
       ...value?.value,
       iuo_slika_base64: this.imgModal,
@@ -100,7 +95,6 @@ export class AddCaffeModalComponent implements OnInit {
       sid: localStorage.getItem('sid'),
       iuo_id: this.options?.dataArr?.iuo_id
     };
-    console.log(data);
 
     this.addCaffeService.updateCatering(data).subscribe((res) => {
 

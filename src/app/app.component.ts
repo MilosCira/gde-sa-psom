@@ -18,8 +18,6 @@ export class AppComponent implements OnInit {
       this.transloco.setActiveLang('rs');
     }
     this.transloco.langChanges$.subscribe((lang: any) => {
-      // console.log(lang);
-
       if (!localStorage.getItem('lang') || lang != localStorage.getItem('lang')) {
         localStorage.setItem('lang', lang);
       }

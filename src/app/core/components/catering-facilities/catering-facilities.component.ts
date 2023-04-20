@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
 import { ImageBase64Service } from '../../interceptor/utils/base64.converter';
 import { CateringService } from './caterign-facilities.service';
@@ -12,11 +12,6 @@ import { CateringStore } from './state/catering.store';
   encapsulation: ViewEncapsulation.None,
 })
 export class CateringFacilitiesComponent implements OnInit {
-  constructor(
-    private cs: CateringService,
-    private translocoService: TranslocoService,
-    private cStore: CateringStore
-  ) { }
   allCateringFacilties: any;
   countNumber: number | undefined;
   searchWord: string = '';
@@ -28,6 +23,14 @@ export class CateringFacilitiesComponent implements OnInit {
   selectedSize: any;
   selectedTowns: any;
   dropdownSettings: any = {};
+
+
+  constructor(
+    private cs: CateringService,
+    private translocoService: TranslocoService,
+    private cStore: CateringStore
+  ) { }
+
   ngOnInit(): void {
     this.dropdownSettings = {
       singleSelection: true,
@@ -58,6 +61,7 @@ export class CateringFacilitiesComponent implements OnInit {
     }
   }
   onItemSelect(item: any, type: string) {
+
     switch (type) {
       case 'place': {
         this.selectedPlaces = item.id;
@@ -86,8 +90,6 @@ export class CateringFacilitiesComponent implements OnInit {
   getCateringFacilities() {
     this.cs.getLimitCatering().subscribe((res) => {
       if (res) {
-        console.log(res);
-
         this.showLoader = false;
         this.cs.getAllPlaces().subscribe((res) => {
           this.places = this.translocoService.translate(res?.ugo);

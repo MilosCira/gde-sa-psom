@@ -61,7 +61,6 @@ export class SuggestedCateringFacilitiesComponent implements OnInit {
       sid: localStorage.getItem('sid'),
     };
     this.cs.acceptCatering(dataValue).subscribe((res) => {
-      console.log(res);
 
       this.successSer
         .open({ text: res?.mess ? res?.mess : res?.message })
@@ -98,7 +97,6 @@ export class SuggestedCateringFacilitiesComponent implements OnInit {
   getSuggested() {
     this.cs.getSuggestedCaterings().subscribe((res) => {
       this.suggested = res?.obj;
-      console.log(res);
     });
   }
 }

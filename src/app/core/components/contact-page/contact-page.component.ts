@@ -28,15 +28,11 @@ export class ContactPageComponent implements OnInit {
   }
 
   sendEmail(data: any) {
-    console.log(data.value);
-
     const sendData = {
       ...data.value
     }
 
     this.contactS.sendEmail(sendData).subscribe((res) => {
-      console.log(res);
-
       if (res?.mess === 'ok') {
         this.successS.open({ text: 'success' }).then(
           () => {
