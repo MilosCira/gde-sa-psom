@@ -1,5 +1,5 @@
 import { AddCaffeModalService } from 'src/app/core/shared/modals/add-caffe-modal/add-caffe.service';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { SuccessModalService } from 'src/app/core/shared/modals/success/success-modal.service';
 import { CateringService } from '../../catering-facilities/caterign-facilities.service';
 
@@ -9,7 +9,7 @@ import { CateringService } from '../../catering-facilities/caterign-facilities.s
   styleUrls: ['./edit-catering-facilities.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class EditCateringFacilitiesComponent implements OnInit {
+export class EditCateringFacilitiesComponent implements OnInit, OnDestroy {
   page = 1;
   pageSize = 4;
   collectionSize: any;
@@ -57,5 +57,8 @@ export class EditCateringFacilitiesComponent implements OnInit {
     this.cService.getLimitCatering().subscribe((res) => {
       this.caterings = res?.objekat2;
     });
+  }
+  ngOnDestroy(): void {
+    this.caterings.unsubscribe();
   }
 }

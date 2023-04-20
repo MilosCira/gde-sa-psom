@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation, OnDestroy } from '@angular/core';
 import {
   NgbCarousel,
   NgbSlideEvent,
@@ -14,7 +14,7 @@ import { CateringService } from '../../catering-facilities/caterign-facilities.s
   styleUrls: ['./suggested-catering-facilities.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class SuggestedCateringFacilitiesComponent implements OnInit {
+export class SuggestedCateringFacilitiesComponent implements OnInit, OnDestroy {
   suggested: any;
   @ViewChild('carousel', { static: true }) carousel: NgbCarousel | any;
 
@@ -98,5 +98,8 @@ export class SuggestedCateringFacilitiesComponent implements OnInit {
     this.cs.getSuggestedCaterings().subscribe((res) => {
       this.suggested = res?.obj;
     });
+  }
+  ngOnDestroy(): void {
+    this.suggested.unsubscribe();
   }
 }
