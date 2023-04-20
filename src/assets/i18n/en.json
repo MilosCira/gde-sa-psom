@@ -1,6 +1,9 @@
 {
     "pocetna":"Home",
     "o nama":"About us",
+    "contact":"Contact us",
+    "naslov":"Title",
+    "poruka":"Message",
     "gde sa psom":"Where with the dog",
     "ugostiteljski objekti":"Search accommodation facilities",
     "predlozi objekat":"Suggest an object",
@@ -41,5 +44,14 @@
     "Ostalo":"Other",
     "type":"Type of catering facilities",
     "dodaj":"Add",
-    "Uspešno ste predložili kafić":"You have successfully submitted an catering facilities"
+    "Uspešno ste predložili kafić":"You have successfully submitted an catering facilities",
+    "ko smo mi":"Who we are",
+    "info-site":"The site where with a dog was created as an idea of ​​the owner of 2 large dogs and an adopted cat. Our goal is for other pet owners to check whether they can take their pet with them before going to the restaurant.",
+    "free":"Free to use",
+    "kako predloziti": "How to suggest catering facilities",
+    "important":"Important!",
+    "success":"Email sent successfully",
+    "how-to-suggest":"By clicking on the suggest an object button, a modal opens where you will enter data.",
+    "free-to-use":"Using our site is completely free, as well as adding new catering facilities.",
+    "note":"All information is from personal experience, possible change of categories of catering facilities for pets."
 }

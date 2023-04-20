@@ -1,1 +1,37 @@
-<p>contact-page works!</p>
+<section id="contact">
+    <div class="contact-box">
+      <div class="contact-links">
+        <h4>{{'contact'|transloco}}</h4>
+        <div class="links">
+          <div class="link">
+            <a href="https://www.linkedin.com/in/milo%C5%A1-%C4%87irkovi%C4%87-918109203/" target="_blank"><img src="https://i.postimg.cc/m2mg2Hjm/linkedin.png" alt="linkedin"></a>
+          </div>
+         
+          <div class="link">
+            <a href="mailto:cirkovicmilos99@gmail.com"><img src="https://i.postimg.cc/NjLfyjPB/email.png" alt="email"></a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrapper">
+        <form [formGroup]="contactForm">
+          <div class="form-item">
+            <input formControlName="subject" type="text" name="sender" required>
+            <label>{{'naslov'|transloco}}:</label>
+          </div>
+          <div class="form-item">
+            <input formControlName="from" type="text" name="email" required>
+            <label>Email:</label>
+          </div>
+          <div class="form-item">
+            <textarea formControlName="message" class="" name="message" required></textarea>
+            <label>{{'poruka'|transloco}}:</label>
+          </div>
+          <button (click)="sendEmail(contactForm)" [disabled]="contactForm.invalid" class="submit-btn">Send</button>  
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <ng-template success>
+    <app-success></app-success>
+  </ng-template>

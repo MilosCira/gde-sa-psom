@@ -1,6 +1,6 @@
 .friends-site-container {
     padding: 20px 0;
-    border: 1px solid #86868b;
+    // border: 1px solid #86868b;
     border-radius: 8px;
     width: 94%;
     max-width: 1200px;
@@ -14,7 +14,7 @@
     .friends-site-wrapper {
         display: grid;
         align-items: center;
-        grid-template-columns: repeat(4, 100px);
+        grid-template-columns: repeat(3, 100px);
         justify-content: space-around;
         margin-top: 1rem;
         a {
@@ -23,7 +23,7 @@
         }
         .friend-image {
             width: 103px;
-            height: 63px;
+            height: 66px;
             background-size: cover;
         }
     }

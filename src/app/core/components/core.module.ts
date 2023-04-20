@@ -12,6 +12,7 @@ import { CateringFacilitiesComponent } from './catering-facilities/catering-faci
 import { LandingPageModule } from './landing-page/landing-page.module';
 import { NotFoundedComponent } from './not-founded/not-founded.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { ContactPageService } from './contact-page/contact-page.service';
 
 @NgModule({
     declarations: [
@@ -33,6 +34,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
         PipeModule,
         NgMultiSelectDropDownModule.forRoot(),
     ],
-    exports: [LandingPageModule, SharedModule, PipeModule],
+    providers: [ContactPageService],
+    exports: [LandingPageModule, SharedModule, PipeModule, ContactPageComponent],
 })
 export class CoreModule { }

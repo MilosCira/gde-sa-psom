@@ -23,7 +23,7 @@ $s: rgb(62, 70, 132);
     }
     .email {
         background: rgb(255, 255, 255);
-        box-shadow: 0 0 2em hsl(231deg 62% 94%);
+        box-shadow: 0 0 2em rgb(230, 233, 249);
         padding: 1em;
         display: flex;
         flex-direction: column;
@@ -41,8 +41,8 @@ $s: rgb(62, 70, 132);
         }
     }
     .password {
-        background: hsl(0deg 0% 100%);
-        box-shadow: 0 0 2em hsl(231deg 62% 94%);
+        background: rgb(255, 255, 255);
+        box-shadow: 0 0 2em rgb(230, 233, 249);
         padding: 1em;
         display: flex;
         flex-direction: column;
@@ -58,7 +58,7 @@ $s: rgb(62, 70, 132);
             }
         }
         ion-icon {
-            color: hsl(0deg 0% 30%);
+            color: rgb(77, 77, 77);
             margin-bottom: -0.2em;
         }
         .show-hide {
@@ -68,7 +68,7 @@ $s: rgb(62, 70, 132);
     .login {
         padding: 1em;
         background: #7af15c;
-        color: hsl(0 0 100);
+        color: rgb(255, 255, 255);
         border: none;
         border-radius: 30px;
         font-weight: 600;

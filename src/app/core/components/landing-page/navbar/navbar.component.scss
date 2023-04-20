@@ -78,7 +78,7 @@ a {
     height: 55px;
     z-index: 100;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-    background-color: #3c3c3c;
+    background-color: #6c6c6c;
     display: flex;
     overflow-x: auto;
 }
@@ -106,7 +106,7 @@ a {
 
 .nav__link--active {
     background-color: #eeeeee;
-    color: #5cb25d;
+    color: #000;
 }
 
 .nav__icon {
