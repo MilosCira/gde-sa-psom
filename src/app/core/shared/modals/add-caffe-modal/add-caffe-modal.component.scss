@@ -57,6 +57,7 @@
             border-radius: 8px;
             padding: 5px;
             width: 100%;
+            max-width: 390px;
             // width: 190px;
             cursor: pointer;
         }
@@ -86,4 +87,9 @@
 .modal-content {
     border: none !important;
     background-color: transparent !important;
+}
+@media screen and(max-width:600px) {
+    .ng-select {
+        max-width: 313px;
+    }
 }

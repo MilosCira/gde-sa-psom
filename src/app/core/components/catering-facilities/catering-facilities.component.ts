@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
   encapsulation: ViewEncapsulation.None,
 })
 export class CateringFacilitiesComponent implements OnInit {
-  allCateringFacilties: any;
+  allCateringFacilties: any[];
   countNumber: number | undefined;
   searchWord: string = '';
   showLoader: boolean = true;
@@ -25,7 +25,7 @@ export class CateringFacilitiesComponent implements OnInit {
   selectedTowns: any;
   dropdownSettings: any = {};
 
-
+  public showCountOfPost = 2;
   constructor(
     private cs: CateringService,
     private translocoService: TranslocoService,
@@ -41,7 +41,9 @@ export class CateringFacilitiesComponent implements OnInit {
     };
     this.getCateringFacilities();
   }
-
+  showMore() {
+    this.showCountOfPost += 2;
+  }
   onItemDeselect(item: any, type: string) {
     switch (type) {
       case 'place': {
