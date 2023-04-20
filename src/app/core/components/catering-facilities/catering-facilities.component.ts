@@ -25,11 +25,8 @@ export class CateringFacilitiesComponent implements OnInit {
   selectedTowns: any;
   dropdownSettings: any = {};
 
-  public showCountOfPost = 2;
   constructor(
     private cs: CateringService,
-    private translocoService: TranslocoService,
-    private cStore: CateringStore
   ) { }
 
   ngOnInit(): void {
@@ -41,9 +38,7 @@ export class CateringFacilitiesComponent implements OnInit {
     };
     this.getCateringFacilities();
   }
-  showMore() {
-    this.showCountOfPost += 2;
-  }
+
   onItemDeselect(item: any, type: string) {
     switch (type) {
       case 'place': {
