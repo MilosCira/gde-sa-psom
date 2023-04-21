@@ -1,5 +1,5 @@
 <div class="suggested-container">
-<div class="suggested-wrapper" *ngFor="let sug of suggested" ngIf="sug">
+<div class="suggested-wrapper" *ngFor="let sug of suggested" >
     <ngb-carousel [interval]="10000" #carousel (slide)="onSlide($event)">
         <ng-template ngbSlide>
 

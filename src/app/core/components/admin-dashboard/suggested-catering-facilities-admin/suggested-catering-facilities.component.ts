@@ -14,7 +14,7 @@ import { CateringService } from '../../catering-facilities/caterign-facilities.s
   styleUrls: ['./suggested-catering-facilities.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class SuggestedCateringFacilitiesComponent implements OnInit, OnDestroy {
+export class SuggestedCateringFacilitiesComponent implements OnInit {
   suggested: any;
   @ViewChild('carousel', { static: true }) carousel: NgbCarousel | any;
 
@@ -99,7 +99,5 @@ export class SuggestedCateringFacilitiesComponent implements OnInit, OnDestroy {
       this.suggested = res?.obj;
     });
   }
-  ngOnDestroy(): void {
-    this.suggested?.unsubscribe();
-  }
 }
+

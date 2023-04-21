@@ -9,7 +9,7 @@ import { CateringService } from '../../catering-facilities/caterign-facilities.s
   styleUrls: ['./edit-catering-facilities.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class EditCateringFacilitiesComponent implements OnInit, OnDestroy {
+export class EditCateringFacilitiesComponent implements OnInit {
   page = 1;
   pageSize = 4;
   collectionSize: any;
@@ -58,7 +58,5 @@ export class EditCateringFacilitiesComponent implements OnInit, OnDestroy {
       this.caterings = res?.objekat2;
     });
   }
-  ngOnDestroy(): void {
-    this.caterings?.unsubscribe();
-  }
+
 }
