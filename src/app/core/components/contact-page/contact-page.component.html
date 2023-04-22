@@ -28,7 +28,7 @@
             <textarea formControlName="message" class="" name="message" required></textarea>
             <label>{{'poruka'|transloco}}:</label>
           </div>
-          <button (click)="sendEmail(contactForm)" [disabled]="contactForm.invalid" class="submit-btn">Send</button>  
+          <button (click)="sendEmail(contactForm)" [disabled]="contactForm.invalid" class="submit-btn">{{'send'|transloco}}</button>  
         </form>
       </div>
     </div>
