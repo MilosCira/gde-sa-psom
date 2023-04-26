@@ -35,17 +35,17 @@
       <i class="material-icons nav__icon">location_city</i>
       <span class="value">{{ township }}, {{ city }}</span>
     </div>
-    <div class="icon-text-wrapper">
+    <div *ngIf="garden" class="icon-text-wrapper">
       <i class="material-icons nav__icon">deck</i>
       <span class="value">{{ garden | transloco }}</span>
     </div>
 
-    <div class="icon-text-wrapper">
+    <div *ngIf="sizeOfDog" class="icon-text-wrapper">
       <i class="material-icons nav__icon">height</i>
       <span class="value">{{ sizeOfDog | transloco }}</span>
     </div>
 
-    <div class="icon-text-wrapper">
+    <div *ngIf="siteLink" class="icon-text-wrapper">
       <i class="material-icons nav__icon">link</i>
       <span class="value">
         <a [href]="siteLink" target="_blank">{{

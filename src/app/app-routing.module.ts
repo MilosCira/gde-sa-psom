@@ -8,6 +8,7 @@ import { NotFoundedComponent } from './core/components/not-founded/not-founded.c
 import { LoginComponent } from './core/components/admin-dashboard/login/login.component';
 import { AdminDashboardComponent } from './core/components/admin-dashboard/admin-dashboard.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { ParksComponent } from './core/components/parks/parks.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutPageComponent,
+  },
+  {
+    path: 'parks',
+    component: ParksComponent
   },
   {
     path: '**',

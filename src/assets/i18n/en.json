@@ -6,7 +6,7 @@
     "poruka":"Message",
     "gde sa psom":"Where with the dog",
     "ugostiteljski objekti":"Search accommodation facilities",
-    "predlozi objekat":"Suggest an object",
+    "predlozi objekat":"Suggest",
     "zelimo kratko da Vas upoznamo sa sajtom gde sa psom":"We want to briefly introduce you to the site where with the dog",
     "upoznavanje":"The site where you can go with a dog was created with the aim of providing pet owners with an easy search for accommodation facilities where they can go with their pets.",
     "pogledaj":"View all catering establishments",
@@ -51,8 +51,9 @@
     "kako predloziti": "How to suggest catering facilities",
     "important":"Important!",
     "success":"Email sent successfully",
-    "how-to-suggest":"By clicking on the suggest an object button, a modal opens where you will enter data.",
+    "how-to-suggest":"By clicking on the suggest button, a modal opens where you will enter data.",
     "free-to-use":"Using our site is completely free, as well as adding new catering facilities.",
     "note":"All information is from personal experience, possible change of categories of catering facilities for pets.",
-    "send":"Send"
+    "send":"Send",
+    "park":"Parks for dogs"
 }

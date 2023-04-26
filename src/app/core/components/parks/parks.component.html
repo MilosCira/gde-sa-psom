@@ -1,0 +1,15 @@
+<div class="parks-container">
+    <div class="parks-wrapper">
+        
+        <app-custom-card *ngFor="let park of parks"
+         [city]="park?.grd_ime"
+         [location]="park?.par_lokacija"
+         [nameOfObject]="park?.par_ime"
+         [images]="'../../../../assets/park.jpg'"
+         [imagesInside]="'../../../../assets/park-inside.jpg'"
+         [township]="park?.ops_ime"
+        >
+
+        </app-custom-card>
+    </div>
+</div>

@@ -6,7 +6,7 @@
     "poruka":"Poruka",
     "gde sa psom":"Gde sa psom",
     "ugostiteljski objekti":"Pretraži ugostiteljske objekte",
-    "predlozi objekat":"Predloži objekat",
+    "predlozi objekat":"Predloži",
     "zelimo kratko da Vas upoznamo sa sajtom gde sa psom":"Želimo kratko da Vas upoznamo sa sajtom gde sa psom",
     "upoznavanje":"Sajt gde sa psom nastao je sa ciljem da vlasnicima ljubimaca obezbedi laku pretragu ugositeljskih objekata gde mogu ići sa svojim ljubimcima.",
     "pogledaj":"Pogledaj sve ugostiteljske objekte",
@@ -51,8 +51,9 @@
     "kako predloziti": "Kako predložiti ugostiteljski objekat",
     "important":"Važno!",
     "success":"Uspešno poslat email",
-    "how-to-suggest":"Klikom na dugme predloži objekat, otvara se modal gde ćete uneti podatake.",
+    "how-to-suggest":"Klikom na dugme predloži, otvara se modal gde ćete uneti podatake.",
     "free-to-use":"Korišćenje našeg sajta je potpuno besplatno, kao i dodavanje novog ugostiteljskog objekta.",
     "note":"Sve informacije su iz ličnog iskustva, moguća promena kategorija ugostiteljskog objekta za ljubimca.",
-    "send":"Pošalji"
+    "send":"Pošalji",
+    "park":"Parkovi za pse"
 }

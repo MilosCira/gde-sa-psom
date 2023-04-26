@@ -13,7 +13,11 @@
             {{ "ugostiteljski objekti" | transloco }}
           </li></a
         >
-
+        <a routerLink="parks"
+        ><li class="nav-tab-gp">
+          {{ "park" | transloco }}
+        </li></a
+      >
       
         <a href="about">
           <li class="nav-tab-gp">{{ "o nama" | transloco }}</li></a
@@ -55,6 +59,14 @@
       <i class="material-icons nav__icon">search</i>
       <span class="nav__text">{{ "search" | transloco }}</span>
     </a>
+    <a
+    [routerLink]="'/parks'"
+    [routerLinkActive]="['nav__link--active']"
+    class="nav__link"
+  >
+    <i class="material-icons nav__icon">park</i>
+    <span class="nav__text">{{ "park" | transloco }}</span>
+  </a>
     <a
       [routerLink]="'/about'"
       [routerLinkActive]="['nav__link--active']"
