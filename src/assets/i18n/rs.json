@@ -55,5 +55,19 @@
     "free-to-use":"Korišćenje našeg sajta je potpuno besplatno, kao i dodavanje novog ugostiteljskog objekta.",
     "note":"Sve informacije su iz ličnog iskustva, moguća promena kategorija ugostiteljskog objekta za ljubimca.",
     "send":"Pošalji",
-    "park":"Parkovi za pse"
+    "park":"Parkovi za pse",
+    "rules":"Osnovna pravila parka za pse",
+    "1-rule":"Pas mora biti pod stalnom kontrolom vlasnika ili vodiča.",
+    "2-rule":"Vlasnici su odgovorni za svaku štetu nanetu drugim psima i ljudima od strane svojih pasa.",
+    "3-rule":"Svi psi koji ispolje prve znake agresije moraju biti udaljeni iz parka. Psi sa takvim karakteristikama obavezno moraju nositi korpu.",
+    "4-rule":"Svi psi moraju biti zdravi, čipovani i vakcinisani protiv zaraznih bolesti.",
+    "5-rule":"Nije dozvoljeno unošenje alkoholnih pića u park.",
+    "6-rule":"Ne unositi hranu. osim hrane za pse. Ne unositi staklo ili bilo koje druge potencijalno opasne predmete koji mogu ugroziti pse i posetioce parka.",
+    "7-rule":"Držati psa na povodcu pri ulasku i izlasku iz parka.",
+    "8-rule":"Zabranjen je ulazak dece mlađe od 8 godina. Deca svojim ponašanjem mogu izazvati agresiju pasa ili uplašiti pse. Ovo pravilo se uvodi isključivo zbog bezbednosti vaše dece.",
+    "9-rule":"Nikada ne ostavljati psa bez nadzora.",
+    "10-rule":"Zabranjen je ulazak: skotnim ženkama, ženkama u teranju, bolesnim i povređenim psima.",
+    "11-rule":"Parkovi su namenjeni posetiocima koji su spremni da podrže ograničenja parka i ne može se koristiti za spontana društvena okupljanja.",
+    "12-rule":"Ne uvoditi štenad mlađu od 4 meseca i štenad koja nisu vakcinisana.",
+    "13-rule":"Pokupiti otpad od psa, kao i svaki drugi otpad (opuške od cigareta, omote, papire…)"
 }
