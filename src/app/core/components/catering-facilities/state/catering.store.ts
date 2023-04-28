@@ -6,8 +6,8 @@ import { ICateringFacilities } from './catering-facilities.interface';
 export interface CateringState extends EntityState<ICateringFacilities> { }
 
 @Injectable({ providedIn: 'root' })
-@StoreConfig({ name: 'cateringStore' })
-export class CateringStore extends EntityStore<any> {
+@StoreConfig({ name: 'catering' })
+export class CateringStore extends EntityStore<CateringState> {
     constructor() {
         super();
     }

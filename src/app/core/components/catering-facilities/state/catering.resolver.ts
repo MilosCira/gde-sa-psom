@@ -27,10 +27,9 @@ export class CateringResolver implements Resolve<ICateringFacilities[]> {
                 this.router.navigate(['/']);
                 return of('No catering data for...');
             }),
-            tap((cs: ICateringFacilities) => {
-                console.log(cs);
+            tap((cs: any) => {
 
-                this.cateringStore.set([cs]);
+                this.cateringStore.set(cs?.objekat2);
             })
         );
     }
